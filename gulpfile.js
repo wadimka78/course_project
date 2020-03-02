@@ -23,7 +23,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('mincss', function() {
 
-return gulp.src("./css*.css")
+return gulp.src("./css/mystyle.css")
 
 .pipe(rename({suffix: ".min"}))
 
