@@ -1,5 +1,5 @@
 {
-  "name": "studying-the-web",
+  "name": "Course_project",
   "version": "1.0.0",
   "description": "Изучаю веб-разработку)",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wadimka78/studying-the-web.git"
+    "url": "git+https://github.com/wadimka78/Course_project.git"
   },
   "author": "vadim",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wadimka78/studying-the-web/issues"
+    "url": "https://github.com/wadimka78/Course_project/issues"
   },
-  "homepage": "https://github.com/wadimka78/studying-the-web#readme",
+  "homepage": "https://github.com/wadimka78/Course_project#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
