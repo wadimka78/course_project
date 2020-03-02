@@ -1,7 +1,7 @@
 const gulp = require ('gulp');
 const browserSync = require('browser-sync').create();
-var cleanCSS     = require('gulp-clean-css');
-var rename = require('gulp-rename');
+const cleanCSS     = require('gulp-clean-css');
+const rename = require('gulp-rename');
 
 
 gulp.task('hello', function(done) {
@@ -22,7 +22,7 @@ gulp.task('browser-sync', function() {
 
 // Минимизация CSS и добавление к ним .min
 
-gulp.task('mincss', function(done) {
+gulp.task('mincss', function() {
 
 return gulp.src("./css/mystyle.css")
 
@@ -31,6 +31,5 @@ return gulp.src("./css/mystyle.css")
 .pipe(cleanCSS())
 
 .pipe(gulp.dest("./css"));
-done();
 
 });
