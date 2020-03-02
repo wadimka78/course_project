@@ -1,2 +1,2 @@
-# Course project
+# course_project
 Изучаю веб-разработку)
