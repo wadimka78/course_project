@@ -29,6 +29,6 @@ return gulp.src("./css/mystyle.css")
 
 .pipe(cleanCSS())
 
-.pipe(gulp.dest("./temp"));
+.pipe(gulp.dest("./css"));
 
 });
