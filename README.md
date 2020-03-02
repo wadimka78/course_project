@@ -1,2 +1,2 @@
-# studying the web
+# Course project
 Изучаю веб-разработку)
