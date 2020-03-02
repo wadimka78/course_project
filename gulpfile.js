@@ -23,12 +23,12 @@ gulp.task('browser-sync', function() {
 
 gulp.task('mincss', function() {
 
-return gulp.src("/css/*.css")
+return gulp.src("./css*.css")
 
 .pipe(rename({suffix: ".min"}))
 
 .pipe(cleanCSS())
 
-.pipe(gulp.dest("/css"));
+.pipe(gulp.dest("./temp"));
 
-})
+});
