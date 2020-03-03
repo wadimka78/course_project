@@ -1,16 +1,16 @@
-const gulp = require ('gulp');
-const browserSync = require('browser-sync').create();
-const cleanCSS     = require('gulp-clean-css');
-const rename = require('gulp-rename');
+const gulp = require('gulp'),
+    browserSync = require('browser-sync').create(),
+    cleanCSS = require('gulp-clean-css'),
+    rename = require('gulp-rename');
 
 
-gulp.task('hello', function(done) {
-   console.log('Привет, тебе, о мир!');
-   done();
+gulp.task('hello', function (done) {
+    console.log('Привет, тебе, о мир!');
+    done();
 });
 
 // Static server
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
             baseDir: "./"
@@ -22,14 +22,16 @@ gulp.task('browser-sync', function() {
 
 // Минимизация CSS и добавление к ним .min
 
-gulp.task('mincss', function() {
+gulp.task('mincss', function () {
 
-return gulp.src("./css/mystyle.css")
+    return gulp.src("./css/mystyle.css")
 
-.pipe(rename({suffix: ".min"}))
+        .pipe(rename({
+            suffix: ".min"
+        }))
 
-.pipe(cleanCSS())
+        .pipe(cleanCSS())
 
-.pipe(gulp.dest("./css"));
+        .pipe(gulp.dest("./css"));
 
 });

@@ -2,7 +2,7 @@
   "name": "course_project",
   "version": "1.0.0",
   "description": "Изучаю веб-разработку)",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/wadimka78/course_project.git"
   },
-  "author": "vadim",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wadimka78/course_project/issues"
@@ -19,7 +19,9 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
+    "gulp-clean-css": "^4.2.0"
+  },
+  "dependencies": {
     "gulp-rename": "^2.0.0"
   }
 }
