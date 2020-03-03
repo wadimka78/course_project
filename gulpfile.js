@@ -1,8 +1,7 @@
-const gulp = require ('gulp');
-const browserSync = require('browser-sync').create();
-const cleanCSS     = require('gulp-clean-css');
-const rename = require('gulp-rename');
-
+const gulp = require('gulp'),
+    browserSync = require('browser-sync').create(),
+    cleanCSS = require('gulp-clean-css'),
+    rename = require('gulp-rename');
 
 gulp.task('hello', function(done) {
    console.log('Привет, тебе, о мир!');
