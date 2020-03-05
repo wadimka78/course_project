@@ -9,7 +9,8 @@ html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */ }
+  /* 2 */
+}
 
 /* Sections
    ========================================================================== */
@@ -17,13 +18,15 @@ html {
  * Remove the margin in all browsers.
  */
 body {
-  margin: 0; }
+  margin: 0;
+}
 
 /**
  * Render the `main` element consistently in IE.
  */
 main {
-  display: block; }
+  display: block;
+}
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -33,40 +36,67 @@ main {
   padding: 13px 20px;
   border: none;
   border-radius: 2px;
-  text-transform: uppercase; }
-  .button--primary {
-    background-color: #E3B873;
-    color: #fff; }
+  text-transform: uppercase;
+}
+
+.button--primary {
+  background-color: #E3B873;
+  color: #fff;
+}
 
 .container {
-  min-width: 1256px;
-  margin: auto; }
+  max-width: 1256px;
+  margin: auto;
+}
 
 .header {
   background-color: #131313;
-  padding: 24px 0; }
+  padding: 24px 0;
+}
 
 .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 .logo {
   color: #E3B873;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .nav__item {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  margin-right: 40px; }
+  margin-right: 40px;
+}
 
 .phone {
-  color: #E3B873; }
+  color: #E3B873;
+}
 
 .contacts__phone {
-  margin-right: 45px; }
+  margin-right: 45px;
+}
+
+.hero__title {
+  font-family: "Yeseva One";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 53.91px;
+  text-transform: uppercase;
+  color: #e3b873;
+}
 
 body {
   font-family: sans-serif;
-  font-size: 14px; }
+  font-size: 14px;
+}
+/*# sourceMappingURL=style.css.map */
