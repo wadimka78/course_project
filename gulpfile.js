@@ -1,34 +1,39 @@
-const gulp = require('gulp'),
+const {src, dest, watch} = require('gulp'),
     browserSync = require('browser-sync').create(),
     cleanCSS = require('gulp-clean-css'),
-    rename = require('gulp-rename');
-
-gulp.task('hello', function(done) {
-   console.log('Привет, тебе, о мир!');
-   done();
-});
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass');
 
 // Static server
-gulp.task('browser-sync', function() {
+ function bs() {
+     serveSass();
     browserSync.init({
         server: {
             baseDir: "./"
         }
     });
+    watch("./*.html").on('change', browserSync.reload);
+    watch("./sass/**/*.sass", serveSass);
+    watch("./js/*.js").on('change', browserSync.reload);
+};
 
-    gulp.watch("./*.html").on('change', browserSync.reload);
-});
+// Compile sass into CSS & auto-inject into browsers
+function  serveSass() {
+    return src("./sass/*.sass")
+        .pipe(sass())
+        .pipe(dest("./css"))
+        .pipe(browserSync.stream());
+};
+
+exports.serve = bs; 
 
 // Минимизация CSS и добавление к ним .min
 
-gulp.task('mincss', function() {
+/* gulp.task('mincss', function() {
 
-return gulp.src("./css/mystyle.css")
-
-.pipe(rename({suffix: ".min"}))
-
-.pipe(cleanCSS())
-
-.pipe(gulp.dest("./css"));
-
-});
+    return src("./css/mystyle.css")
+    .pipe(rename({suffix: ".min"}))
+    .pipe(cleanCSS())
+    .pipe(dest("./css"));
+    }); */
+ 
