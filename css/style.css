@@ -3,16 +3,14 @@
   src: url("../fonts/futura/FuturaBookC.woff") format("woff"), url("../fonts/futura/FuturaBookC.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: wrap;
-}
+  font-display: wrap; }
 
 @font-face {
   font-family: 'Futura Demi';
   src: url("../fonts/futura/FuturaDemiC.woff") format("woff"), url("../fonts/futura/FuturaDemiC.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: wrap;
-}
+  font-display: wrap; }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -25,8 +23,7 @@ html {
   line-height: 1.15;
   /* 1 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
+  /* 2 */ }
 
 /* Sections
    ========================================================================== */
@@ -34,15 +31,13 @@ html {
  * Remove the margin in all browsers.
  */
 body {
-  margin: 0;
-}
+  margin: 0; }
 
 /**
  * Render the `main` element consistently in IE.
  */
 main {
-  display: block;
-}
+  display: block; }
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -52,55 +47,44 @@ main {
   padding: 13px 20px;
   border: none;
   border-radius: 2px;
-  text-transform: uppercase;
-}
-
-.button--primary {
-  background-color: #E3B873;
-  color: #fff;
-}
+  text-transform: uppercase; }
+  .button--primary {
+    background-color: #E3B873;
+    color: #fff; }
 
 .container {
   max-width: 1256px;
-  margin: auto;
-}
+  margin: auto; }
 
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
   background-color: #131313;
-  padding: 24px 0;
-}
+  padding: 24px 0; }
 
 .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
+  justify-content: space-between;
+  align-items: center; }
 
 .logo {
   color: #E3B873;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 .nav__item {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  margin-right: 40px;
-}
+  margin-right: 40px; }
 
 .phone {
-  color: #E3B873;
-}
+  color: #E3B873; }
 
 .contacts__phone {
-  margin-right: 45px;
-}
+  margin-right: 45px; }
 
 .hero__title {
   font-family: "Yeseva One";
@@ -108,51 +92,35 @@ main {
   font-weight: 400;
   line-height: 53.91px;
   text-transform: uppercase;
-  color: #e3b873;
-}
+  color: #e3b873; }
 
 .hero {
   position: relative;
+  padding-top: 100px;
   background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
   height: 100vh;
-  color: #fff;
-}
-
-.hero__instagram {
-  position: absolute;
-  left: 0;
-  top: 0;
-  max-width: 80px;
-  height: 100%;
-}
+  color: #fff; }
+  .hero__instagram {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 80px;
+    height: 100%; }
 
 .instagram {
-  background-color: #131313;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.instagram__link {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #E3B873;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
+  justify-content: center;
+  align-items: center;
+  background-color: #131313; }
+  .instagram__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #E3B873;
+    transform: rotate(90deg); }
 
 .title {
-  margin: 0;
-}
+  margin: 0; }
 
 body {
   font-family: 'Futura Book', sans-serif;
-  font-size: 14px;
-}
-/*# sourceMappingURL=style.css.map */
+  font-size: 14px; }
