@@ -60,6 +60,7 @@ main {
 }
 
 .button--primary {
+  width: 207px;
   background-color: #E3B873;
   color: #fff;
   -webkit-box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
@@ -74,6 +75,7 @@ main {
 }
 
 .button--outline {
+  width: 207px;
   border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
@@ -93,6 +95,11 @@ main {
   z-index: 99;
   background-color: #131313;
   padding: 24px 0;
+}
+
+.header .container {
+  margin-left: 80px;
+  margin-right: auto;
 }
 
 .menu {
@@ -149,6 +156,11 @@ main {
   background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
   height: 100vh;
   color: #fff;
+}
+
+.hero .container {
+  margin-left: 142px;
+  margin-top: 194px;
 }
 
 .hero::before {
@@ -212,6 +224,10 @@ main {
   border: 2px solid #E3B873;
   border-radius: 50%;
   margin-left: 12px;
+}
+
+.hero__text {
+  padding-bottom: 41px;
 }
 
 .instagram {
