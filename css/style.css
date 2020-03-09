@@ -358,7 +358,7 @@ template {
 }
 
 .button {
-  padding: 13px 20px;
+  padding: 11px 24px;
   border: none;
   border-radius: 2px;
   text-transform: uppercase;
@@ -370,7 +370,7 @@ template {
 }
 
 .button--primary {
-  width: 207px;
+  margin-right: 7.2rem;
   background-color: #E3B873;
   color: #fff;
   -webkit-box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
@@ -385,15 +385,13 @@ template {
 }
 
 .button--outline {
-  width: 207px;
   border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
 }
 
 .container {
-  width: 85%;
-  /** max-width: 1256px **/
+  width: 100vw;
   margin: auto;
 }
 
@@ -417,23 +415,25 @@ template {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: 5.97rem;
 }
 
 .menu__nav {
-  margin-left: 7.14rem;
+  margin-left: 7.7rem;
   margin-right: auto;
 }
 
 .logo {
   color: #E3B873;
   text-transform: uppercase;
+  font-size: 1.075rem;
 }
 
 .nav__item {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  margin-right: 2.85rem;
+  margin-right: 2.65rem;
   -webkit-text-decoration-color: color 0.2s;
           text-decoration-color: color 0.2s;
 }
@@ -447,7 +447,7 @@ template {
 }
 
 .contacts__phone {
-  margin-right: 3.21rem;
+  margin-right: 3rem;
 }
 
 .hero {
@@ -464,7 +464,8 @@ template {
           justify-content: center;
   padding-top: 100px;
   background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
-  height: 100vh;
+  height: 54.86vw;
+  max-height: 100vh;
   color: #fff;
 }
 
@@ -481,16 +482,22 @@ template {
 .hero__content {
   position: relative;
   max-width: 47.85rem;
-  margin-left: 4.28rem;
+  margin-top: -3.7rem;
+  margin-left: 10.2rem;
 }
 
 .hero__text {
   font-size: 1.57rem;
+  line-height: 145%;
   max-width: 500px;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 4.2rem;
 }
 
 .hero__button {
   margin-right: 20px;
+  padding: 18px 35px;
 }
 
 .hero__instagram {
@@ -532,6 +539,10 @@ template {
   margin-left: 12px;
 }
 
+.hero--container {
+  margin-left: 10%;
+}
+
 .instagram {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,14 +569,16 @@ template {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   line-height: 0.8;
+  font-size: 1.1rem;
+  margin-bottom: 9.57rem;
 }
 
-.instagram__link::after {
+.instagram__link::before {
   content: '';
   width: 50px;
   height: 1px;
   background-color: #E3B873;
-  margin-left: 8px;
+  margin-right: 50px;
 }
 
 .title {
@@ -574,6 +587,7 @@ template {
   text-transform: uppercase;
   font-size: 2.857rem;
   font-weight: 400;
+  line-height: 3.9rem;
 }
 
 .title--primary {
