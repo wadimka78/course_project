@@ -668,12 +668,13 @@ body {
   }
   .hero {
     height: 90vh;
+    width: 100vw;
   }
   .hero__instagram {
     display: none;
   }
   .hero__scroll-down {
-    bottom: -2.5rem;
+    bottom: 0;
     min-height: 5rem;
   }
 }
@@ -692,6 +693,9 @@ body {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     margin: auto;
+  }
+  .hero__content {
+    margin-left: 4rem;
   }
   .hero__text {
     max-width: 380px;

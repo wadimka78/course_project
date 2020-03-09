@@ -18,10 +18,11 @@
         display: none
     .hero
         height: 90vh
+        width: 100vw
         &__instagram
             display: none
         &__scroll-down    
-            bottom: -2.5rem
+            bottom: 0
             min-height: 5rem
 
 @media screen and ( max-width: 767px )
@@ -36,6 +37,8 @@
         justify-content: space-around
         margin: auto
     .hero
+        &__content
+            margin-left: 4rem
         &__text
             max-width: 380px
 @media screen and ( max-width: 575px )
