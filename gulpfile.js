@@ -3,6 +3,7 @@ const {src, dest, watch} = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass');
+    autoprefixer = require('gulp-autoprefixer');
 
 // Static server
  function bs() {
@@ -22,6 +23,9 @@ const {src, dest, watch} = require('gulp'),
 function  serveSass() {
     return src("./sass/**/*.sass", "./scss/**/*.scss")
         .pipe(sass())
+        .pipe(autoprefixer({
+            cascade: false
+        }))
         .pipe(dest("./css"))
         .pipe(browserSync.stream());
 };
