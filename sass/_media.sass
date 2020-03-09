@@ -1,18 +1,46 @@
-@media screen and ( max-width: 1200px  )
+@media screen and (min-width: 1200px)and ( max-width: 1360px)
+    html
+        font-size: 13px
+    .nav
+        &__item
+            margin-right: 1.1rem
+@media screen and ( max-width: 1199px  )
     html
         font-size: 12px
     .nav
+        margin-left: 3rem
         &__item
             margin-right: 1rem
-@media screen and ( max-width: 992px )
+@media screen and ( max-width: 991px )
+    html
+        font-size: 12px
     .nav
         display: none
     .hero
+        height: 90vh
         &__instagram
             display: none
-        &__content
-            margin-left: 0
-@media screen and ( max-width: 570px )
+        &__scroll-down    
+            bottom: -2.5rem
+            min-height: 5rem
+
+@media screen and ( max-width: 767px )
+    html
+        font-size: 11px
+    .contacts
+        &__button
+            margin: 0
+        &__phone
+            margin-right: 5rem
+    .menu
+        justify-content: space-around
+        margin: auto
+    .hero
+        &__text
+            max-width: 380px
+@media screen and ( max-width: 575px )
+    html
+        font-size: 12px
     .contacts
         &__phone
             margin-right: 0
@@ -22,11 +50,13 @@
             display: none
     .title
         font-size: 1.64rem
+        line-height: 2.4rem
     .hero
         &__scroll-down
             display: none
         &__content
             max-width: 22.86rem
+            margin: auto
         &__text
             font-size: 1.29rem
             margin-bottom: 2.28rem
@@ -34,6 +64,8 @@
             display: block
             min-width: 22.86rem
             margin-bottom: 1.85rem
+            text-align: center
+
 @media screen and ( max-height: 450px  )
     .hero
         &__scroll-down
