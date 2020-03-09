@@ -387,6 +387,7 @@ template {
 .button--outline {
   border: 1px solid #fff;
   background-color: transparent;
+  padding: 18px 46px !important;
   color: #fff;
 }
 
@@ -492,12 +493,12 @@ template {
   max-width: 500px;
   margin: 0;
   margin-top: 1rem;
-  margin-bottom: 4.2rem;
+  margin-bottom: 4.25rem;
 }
 
 .hero__button {
-  margin-right: 20px;
-  padding: 18px 35px;
+  margin-right: 1.21rem;
+  padding: 18px 28px;
 }
 
 .hero__instagram {
