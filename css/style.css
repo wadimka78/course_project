@@ -391,7 +391,7 @@ template {
 }
 
 .container {
-  width: 100vw;
+  width: 100%;
   margin: auto;
 }
 
@@ -469,7 +469,7 @@ template {
   padding-top: 100px;
   background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
   height: 54.86vw;
-  max-height: 100vh;
+  height: 100vh;
   color: #fff;
 }
 
@@ -665,10 +665,6 @@ body {
   }
   .nav {
     display: none;
-  }
-  .hero {
-    height: 80vh;
-    width: 100vw;
   }
   .hero__instagram {
     display: none;
