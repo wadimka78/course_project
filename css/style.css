@@ -485,8 +485,8 @@ template {
 }
 
 .card-title {
-  font-size: 1.29rem;
   font-family: 'Yeseva One', cursive;
+  font-size: 1.29rem;
 }
 
 .card__list {
@@ -494,17 +494,22 @@ template {
   margin: 0;
   font-size: 1.07rem;
   line-height: 1.79rem;
+  color: #959595;
+  margin-bottom: 3rem;
   text-transform: none;
   text-align: left;
-  color: #959595;
 }
 
 .card__pricetag {
+  position: absolute;
+  left: 0;
+  bottom: -1.79rem;
   font-size: 1.29rem;
   font-family: 'Yeseva One', cursive;
   text-transform: uppercase;
   background-color: #E3B873;
   color: #fff;
+  padding: 1.214rem 1.285rem;
 }
 
 .hero {
