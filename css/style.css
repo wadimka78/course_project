@@ -738,4 +738,45 @@ body {
     display: none;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .header {
+    padding: 21px 0px 22px 0px;
+  }
+  .menu {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0px 1.5rem;
+  }
+  .title {
+    font-size: 1.95rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.3px;
+  }
+  .hero {
+    padding-top: 19px;
+  }
+  .hero__content {
+    max-width: 100%;
+    margin: 0px 1.46rem;
+    position: absolute;
+    top: 11.7rem;
+  }
+  .hero__text {
+    font-size: 1.45rem;
+    margin-bottom: 2.65rem;
+    line-height: 2.1rem;
+    letter-spacing: .024rem;
+  }
+  .hero__button {
+    width: 100%;
+    margin-bottom: 2.25rem;
+    padding: 19px 28px;
+    letter-spacing: .11rem;
+  }
+  .button--outline {
+    letter-spacing: .075rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
