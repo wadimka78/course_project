@@ -45,15 +45,18 @@
     .types
         &__card
             margin-bottom: 5rem
+    .design
+        &__card
+            margin-bottom: 5rem
     .card
         &__text
             margin-left: 0
-    .design
-        background-color: $dark
-        &__section-title
-            color: $light
-        &__card
-            margin-bottom: 5.7rem
+    // .design
+    //     background-color: $dark
+    //     &__section-title
+    //         color: $light
+    //     &__card
+    //         margin-bottom: 5.7rem
 
 @media screen and ( max-width: 575px )
     html
@@ -87,7 +90,38 @@
             text-align: center
             width: 70%
             margin-bottom: 1.85rem
-
+    .types
+        padding-left: 18px
+        padding-right: 18px
+        &__card
+            margin-bottom: 5.7rem
+    .design
+        @extend .types
+    .section-title
+            margin-bottom: 3.3rem
+            &__heading
+                font-size: 1.82rem
+    .design
+        &__section-title
+            margin-bottom: 1.6rem
+        &__subtitle
+            max-width: 25rem
+            font-size: 1.23rem
+            line-height: 1.7rem
+    .card
+        &__text
+            margin-top: -11.84rem
+            max-width: 22.6rem
+        &__title
+            margin-left: 0.4rem
+            letter-spacing: -0.3px
+        &__list
+            line-height: 1.9rem
+            padding-left: 1.75rem
+        &__pricetag
+            width: 191px
+            padding: 1rem
+            bottom: -0.87rem
 @media screen and ( max-height: 450px  )
     .hero
         &__scroll-down
