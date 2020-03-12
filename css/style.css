@@ -424,6 +424,8 @@ img {
 
 .section-title__heading {
   text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: -1px;
 }
 
 .section-title__image {
@@ -543,6 +545,7 @@ img {
   font-size: 1.29rem;
   margin: 0 0 .47rem .2rem;
   text-align: left;
+  font-weight: 400;
 }
 
 .card__list {
@@ -710,6 +713,7 @@ img {
   margin: 0;
   margin-top: 1rem;
   margin-bottom: 4.25rem;
+  font-weight: lighter;
 }
 
 .hero__button {
