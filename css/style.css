@@ -395,6 +395,57 @@ template {
   margin: auto;
 }
 
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: 'Futura Book', sans-serif;
+  font-size: 1rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section {
+  padding: 60px;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Yeseva One', cursive;
+}
+
+.section-title__heading {
+  text-transform: uppercase;
+}
+
+.section-title__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-title__image::before, .section-title__image::after {
+  content: '';
+  width: 32px;
+  height: 2px;
+  background-color: #E3B873;
+  margin: 0px 10px 4px 10px;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -524,13 +575,17 @@ template {
 .design__subtitle {
   max-width: 54rem;
   margin: auto;
-  margin-bottom: 3.3rem;
+  margin-bottom: 3.1rem;
   color: #363636;
   font-size: 1.43rem;
   font-weight: 400;
   line-height: 2rem;
   text-align: center;
   padding-left: .4rem;
+}
+
+.design .card__pricetag {
+  padding-right: 5.4rem;
 }
 
 .row {
@@ -547,8 +602,10 @@ template {
 }
 
 .col {
-  -ms-flex-preferred-size: 32%;
-      flex-basis: 32%;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  margin-left: .95rem;
+  margin-right: .95rem;
 }
 
 .card__text {
@@ -590,7 +647,6 @@ template {
   background-color: #E3B873;
   color: #fff;
   padding: 1.214rem 2.6rem;
-  padding-right: 5.5rem;
 }
 
 @media screen and (max-width: 375px) {
@@ -625,7 +681,8 @@ template {
           justify-content: center;
   padding-top: 100px;
   background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
-  height: 54.86vw;
+  /** height: 54.86vw **/
+  height: 100vh;
   color: #fff;
 }
 
@@ -755,55 +812,10 @@ template {
   color: #E3B873;
 }
 
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html {
-  font-size: 14px;
-}
-
-body {
-  font-family: 'Futura Book', sans-serif;
-  font-size: 1rem;
-}
-
-img {
-  max-width: 100%;
-}
-
-.section {
-  padding: 60px;
-}
-
-.section-title {
-  text-align: center;
-  font-family: 'Yeseva One', cursive;
-}
-
-.section-title__heading {
-  text-transform: uppercase;
-}
-
-.section-title__image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.section-title__image::before, .section-title__image::after {
-  content: '';
-  width: 32px;
-  height: 2px;
-  background-color: #E3B873;
-  margin: 0px 10px 4px 10px;
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 80%;
+  }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1360px) {
@@ -825,6 +837,10 @@ img {
   .nav__item {
     margin-right: 1rem;
   }
+  .section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -840,6 +856,10 @@ img {
   .hero__scroll-down {
     bottom: 0;
     min-height: 5rem;
+  }
+  .card__text {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 
