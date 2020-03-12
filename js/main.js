@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     modalBtn.forEach(element => {
         element.addEventListener('click', switchModal);
     });
-
+/*     document.addEventListener('keypress', function (e) {
+        if(e.keyCode === 27) document.getElementById('modal_id').hidden= 1;
+    });  */
     closeBtn.addEventListener('click', switchModal);
 });
