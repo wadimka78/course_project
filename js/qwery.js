@@ -30,47 +30,56 @@
 });
  */
 
- $(document).ready(function() {
-   var modal = $('.modal'),
-   modalBtn = $('[data-toggle=modal]');
-   closeBtn = $('.modal__close');
+$(document).ready(function () {
+    var modal = $('.modal'),
+        modalBtn = $('[data-toggle=modal]');
+    closeBtn = $('.modal__close');
 
-    modalBtn.on('click', function() {
-        modal.toggleClass ('modal--visible');
+    modalBtn.on('click', function () {
+        modal.toggleClass('modal--visible');
     });
     closeBtn.on('click', function () {
-        modal.toggleClass ('modal--visible');
+        modal.toggleClass('modal--visible');
     });
 
     /*Закрытие по фону*/
 
     $(document).click(function (e) {
         if ($(e.target).is('.modal')) {
-            modal.toggleClass ('modal--visible');
+            modal.toggleClass('modal--visible');
         }
-    });    
+    });
 
     /*Закрытие по кнопке*/
 
     $(document).keydown(function (e) {
         if (e.keyCode === 27) {
-            modal.toggleClass ('modal--visible');
+            modal.toggleClass('modal--visible');
         }
-    });   
+    });
 
     /*Кнопка прокрутки*/
-	$(window).scroll(function(){
-		if($(window).scrollTop() > 100) {
-			$('#scroll_top').show();
-		} else {
-			$('#scroll_top').hide();
-		}
-	});
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 100) {
+            $('#scroll_top').show();
+        } else {
+            $('#scroll_top').hide();
+        }
+    });
 
-	$('#scroll_top').click(function(){
-		$('html, body').animate({scrollTop: 0}, 600);
-		return false;
-	});
+    $('#scroll_top').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+    })
 
 });
-

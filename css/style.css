@@ -490,8 +490,7 @@ template {
 }
 
 .col-50 {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  width: 50%;
 }
 
 /**, *:before, *:after
@@ -638,6 +637,191 @@ img {
 
 .contacts__button {
   margin-right: 7.2rem;
+}
+
+.hero {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 100px;
+  background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
+  /** height: 54.86vw **/
+  height: 100vh;
+  color: #fff;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.7);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3.46rem;
+  background-color: #131313;
+}
+
+.hero__content {
+  position: relative;
+  max-width: 47.85rem;
+  margin-top: -3.7rem;
+  margin-left: 10.2rem;
+}
+
+.hero__text {
+  font-size: 1.57rem;
+  line-height: 145%;
+  max-width: 500px;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 4.26rem;
+  font-weight: lighter;
+}
+
+.hero__button {
+  margin-right: 1.21rem;
+  padding: 18px 28px;
+}
+
+.hero__instagram {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 5.71rem;
+  height: 100%;
+}
+
+.hero__scroll-down {
+  position: absolute;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  left: 0;
+  bottom: 0;
+  min-width: 17.6rem;
+  min-height: 6.92rem;
+  background-color: #131313;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+.hero__scroll-down::after {
+  content: '';
+  background: url("../img/arrow-down.png") no-repeat center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #E3B873;
+  border-radius: 50%;
+  margin-left: 18px;
+}
+
+.hero--container {
+  margin-left: 10%;
+}
+
+.instagram {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #131313;
+}
+
+.instagram__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #E3B873;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  line-height: 0.8;
+  font-size: 1.1rem;
+  margin-bottom: 9.57rem;
+  padding-left: 7.5rem;
+}
+
+.instagram__link::after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background-color: #E3B873;
+  margin-left: 8px;
+}
+
+.title {
+  margin: 0;
+  font-family: 'Yeseva One', cursive;
+  text-transform: uppercase;
+  font-size: 2.857rem;
+  font-weight: 400;
+  line-height: 3.9rem;
+}
+
+.title--primary {
+  color: #E3B873;
+}
+
+.swiper-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.swiper-slider__text {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  margin-bottom: 2.42rem;
+}
+
+.swiper-slider__heading {
+  font-size: 1.285rem;
+  line-height: 1.78remf;
+  font-family: 'Yeseva One', cursive;
+  text-transform: uppercase;
+  color: #E3B873;
+  margin-bottom: 0.64rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .types__section-title {
@@ -868,164 +1052,6 @@ img {
 .modal__button {
   -ms-flex-item-align: end;
       align-self: flex-end;
-}
-
-.hero {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 100px;
-  background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
-  /** height: 54.86vw **/
-  height: 100vh;
-  color: #fff;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(19, 19, 19, 0.7);
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 3.46rem;
-  background-color: #131313;
-}
-
-.hero__content {
-  position: relative;
-  max-width: 47.85rem;
-  margin-top: -3.7rem;
-  margin-left: 10.2rem;
-}
-
-.hero__text {
-  font-size: 1.57rem;
-  line-height: 145%;
-  max-width: 500px;
-  margin: 0;
-  margin-top: 1rem;
-  margin-bottom: 4.26rem;
-  font-weight: lighter;
-}
-
-.hero__button {
-  margin-right: 1.21rem;
-  padding: 18px 28px;
-}
-
-.hero__instagram {
-  position: absolute;
-  left: 0;
-  top: 0;
-  max-width: 5.71rem;
-  height: 100%;
-}
-
-.hero__scroll-down {
-  position: absolute;
-  z-index: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  left: 0;
-  bottom: 0;
-  min-width: 17.6rem;
-  min-height: 6.92rem;
-  background-color: #131313;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #fff;
-}
-
-.hero__scroll-down::after {
-  content: '';
-  background: url("../img/arrow-down.png") no-repeat center;
-  width: 30px;
-  height: 30px;
-  border: 2px solid #E3B873;
-  border-radius: 50%;
-  margin-left: 18px;
-}
-
-.hero--container {
-  margin-left: 10%;
-}
-
-.instagram {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #131313;
-}
-
-.instagram__link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #E3B873;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  line-height: 0.8;
-  font-size: 1.1rem;
-  margin-bottom: 9.57rem;
-  padding-left: 7.5rem;
-}
-
-.instagram__link::after {
-  content: '';
-  width: 50px;
-  height: 1px;
-  background-color: #E3B873;
-  margin-left: 8px;
-}
-
-.title {
-  margin: 0;
-  font-family: 'Yeseva One', cursive;
-  text-transform: uppercase;
-  font-size: 2.857rem;
-  font-weight: 400;
-  line-height: 3.9rem;
-}
-
-.title--primary {
-  color: #E3B873;
 }
 
 @media screen and (min-width: 1440px) {
