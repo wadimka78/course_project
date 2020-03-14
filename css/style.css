@@ -797,7 +797,7 @@ img {
   color: #E3B873;
 }
 
-.swiper-slider {
+.swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -805,23 +805,27 @@ img {
       flex-wrap: wrap;
 }
 
-.swiper-slider__text {
+.swiper-slide__text {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
   margin-bottom: 2.42rem;
 }
 
-.swiper-slider__heading {
+.swiper-slide__heading {
   font-size: 1.285rem;
-  line-height: 1.78remf;
+  line-height: 1.78rem;
   font-family: 'Yeseva One', cursive;
-  text-transform: uppercase;
   color: #E3B873;
+  text-transform: uppercase;
   margin-bottom: 0.64rem;
 }
 
 .swiper-pagination-bullet {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff;
 }
 
 .types__section-title {

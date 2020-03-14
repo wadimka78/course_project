@@ -1,5 +1,5 @@
 .swiper
-    &-slider
+    &-slide
         display: flex
         flex-wrap: wrap
         &__text
@@ -7,12 +7,14 @@
             margin-bottom: 2.42rem
         &__heading
             font-size: 1.285rem
-            line-height: 1.78remf
+            line-height: 1.78rem
             font-family: 'Yeseva One', cursive
-            text-transform: uppercase
             color: $primary
+            text-transform: uppercase
             margin-bottom: 0.64rem
     &-pagination
         &-bullet
             background-color: rgba($light, 0.3)
+            &-active
+                background-color: $light 
 
