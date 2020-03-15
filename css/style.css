@@ -489,8 +489,16 @@ template {
       flex-basis: 30%;
 }
 
+.col-40 {
+  width: 40%;
+}
+
 .col-50 {
   width: 50%;
+}
+
+.col-60 {
+  width: 60%;
 }
 
 /**, *:before, *:after
@@ -531,10 +539,19 @@ img {
   line-height: 138%;
   font-weight: 400;
   letter-spacing: -1px;
+  font-size: 1.929rem;
 }
 
 .section-title__heading--primary {
   color: #E3B873;
+}
+
+.section-title__anons {
+  font-family: "Futura Demi";
+  font-size: 1.071rem;
+  font-weight: 400;
+  line-height: 1.506rem;
+  text-transform: uppercase;
 }
 
 .section-title__word {
@@ -558,6 +575,7 @@ img {
   font-size: 1.28rem;
   line-height: 2.07rem;
   max-width: 31.57rem;
+  text-align: left;
 }
 
 .section-title__image {
@@ -981,6 +999,58 @@ img {
   background-color: #E3B873;
   color: #fff;
   padding: 1.214rem 2.6rem;
+}
+
+.slider-titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.slide-name {
+  width: 30%;
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.slide-name__number {
+  position: relative;
+}
+
+.slide-name__number::after {
+  content: '';
+  position: absolute;
+  width: 1.429rem;
+  height: 1px;
+  background-color: #E3B873;
+  bottom: -0.357rem;
+  left: 0;
+}
+
+.slide-name__description {
+  font-size: 1.071rem;
+  font-weight: 400;
+  line-height: 1.319rem;
+}
+
+.six-steps .section-title__word::after {
+  margin-left: 6.3rem;
+}
+
+.six-steps .section-title__text {
+  padding-right: 10px;
+}
+
+.six-steps .swiper-slide__text {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: left;
+}
+
+.six-steps .swiper-slide__number {
+  margin-top: 6.429rem;
 }
 
 @media screen and (max-width: 375px) {

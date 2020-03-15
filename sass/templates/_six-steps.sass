@@ -1,0 +1,35 @@
+
+.slider-titles
+    display: flex
+    flex-wrap: wrap    
+.slide-name
+    width: 30%
+    margin-bottom: 35px
+    text-align: left
+    &__number
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            width: 1.429rem
+            height: 1px
+            background-color: $primary
+            bottom: -0.357rem
+            left: 0
+    &__description
+        font-size: 1.071rem
+        font-weight: 400
+        line-height: 1.319rem
+.six-steps 
+    .section-title
+        &__word
+            &::after
+                margin-left: 6.3rem
+        &__text
+            padding-right: 10px
+    .swiper-slide
+        &__text
+            flex-basis: 100%
+            text-align: left
+        &__number
+            margin-top: 6.429rem
