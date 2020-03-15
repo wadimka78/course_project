@@ -85,9 +85,8 @@ $(document).ready(function () {
             prevEl: '.swiper-button-prev',
         },
     });
-
-    mySwiper.on('slideChange', function () {     
-        console.log(mySwiper)       
+    console.log(mySwiper);
+    mySwiper.on('slideChange', function () {
         console.log("Current slide=" + mySwiper.activeIndex);
         $("div.slider-titles/h3").each(function (i) {
             if (i == currentSlideNumber) this.addClass("highlightedNumber");
