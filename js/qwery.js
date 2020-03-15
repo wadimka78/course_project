@@ -74,7 +74,7 @@ $(document).ready(function () {
         return false;
     });
 
-    var mySwiper = new Swiper('.swiper-container', {
+/*     var mySwiper = new Swiper('.swiper-container', {
         loop: true,
         pagination: {
             el: '.swiper-pagination',
@@ -85,15 +85,15 @@ $(document).ready(function () {
             prevEl: '.swiper-button-prev',
         },
     });
-
+ */
     
 
-    mySwiper = new Swiper('.my-swiper', {
+    var mySwiper = new Swiper('.my-swiper', {
         direction: 'vertical',
         loop: true,
     });
     mySwiper.on('slideChange', function () {
-        console.log('* mySwiper.realIndex', mySwiper.realIndex);
+        console.log('.swiper-container', mySwiper.realIndex);
     });
 /* 
     mySwiper.on('init', function () {
