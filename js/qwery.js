@@ -86,8 +86,15 @@ $(document).ready(function () {
         },
     });
 
+    mySwiper.on('init', function () {
+        /* do something */ });
+    // init Swiper
+    mySwiper.init();
+
     console.log("Swiper is initialized:");
     console.log(mySwiper);
+
+
     mySwiper.on('slideChange', function () {
         console.log("Current slide=" + mySwiper.activeIndex);
         $("div.slider-titles/h3").each(function (i) {
@@ -99,7 +106,7 @@ $(document).ready(function () {
 
 
 
-    
+
     var nextBtn = $('.swiper-button-next');
     var prevtBtn = $('.swiper-button-prev');
     var bullets = $('.swiper-pagination');
