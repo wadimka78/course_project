@@ -76,17 +76,22 @@ $(document).ready(function () {
 
 
 
-        var mySwiper = new Swiper('.swiper-container', {
-           loop: true,
-           pagination: {
-               el: '.swiper-pagination',
-               type: 'bullets',
-           },
-           navigation: {
-               nextEl: '.swiper-button-next',
-               prevEl: '.swiper-button-prev',
-           },
-       }) 
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    mySwiper.on('slideChange', function () {
+        console.log('slide changed');
+    });
+
+
 
     var nextBtn = $('.swiper-button-next');
     var prevtBtn = $('.swiper-button-prev');
