@@ -74,8 +74,6 @@ $(document).ready(function () {
         return false;
     });
 
-
-
     var mySwiper = new Swiper('.swiper-container', {
         loop: true,
         pagination: {
@@ -87,10 +85,11 @@ $(document).ready(function () {
             prevEl: '.swiper-button-prev',
         },
     });
-    mySwiper.on('slideChange', function () {
-        console.log('slide changed');
+        mySwiper.on('slideChange', function () {
+            $( "div.slider-titles/h3" ).each(function( i ) { if( i==currentSlideNumber) this.addClass("highlightedNumber"); else this.removeClass("highlightedNumber") 
+            console.log("Current slide=" + mySwiper.activeIndex );
+        });
     });
-
 
 
     var nextBtn = $('.swiper-button-next');

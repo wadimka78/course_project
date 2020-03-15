@@ -1053,6 +1053,11 @@ img {
   margin-top: 6.429rem;
 }
 
+.highlightedNumber {
+  color: red;
+  background: green;
+}
+
 @media screen and (max-width: 375px) {
   .types-desktop {
     display: none;
