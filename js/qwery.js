@@ -86,14 +86,23 @@ $(document).ready(function () {
         },
     });
 
+    
+
+    mySwiper = new Swiper('.my-swiper', {
+        direction: 'vertical',
+        loop: true,
+    });
+    mySwiper.on('slideChange', function () {
+        console.log('* mySwiper.realIndex', mySwiper.realIndex);
+    });
+/* 
     mySwiper.on('init', function () {
-        /* do something */ });
-    // init Swiper
+      });
+ 
     mySwiper.init();
 
     console.log("Swiper is initialized:");
     console.log(mySwiper);
-
 
     mySwiper.on('slideChange', function () {
         console.log("Current slide=" + mySwiper.activeIndex);
@@ -101,11 +110,7 @@ $(document).ready(function () {
             if (i == mySwiper.activeIndex) this.addClass("highlightedNumber");
             else this.removeClass("highlightedNumber");
         });
-    });
-
-
-
-
+    }); */
 
     var nextBtn = $('.swiper-button-next');
     var prevtBtn = $('.swiper-button-prev');
