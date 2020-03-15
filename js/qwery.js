@@ -74,43 +74,69 @@ $(document).ready(function () {
         return false;
     });
 
-/*     var mySwiper = new Swiper('.swiper-container', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-        },
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        }); 
+
+    /*Тест*/
+
+    /*     $(".swiper-container").each(function(index, element){
+            var $this = $(this);
+            $this.addClass("instance-" + index);
+            $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
+            $this.find(".swiper-button-next").addClass("btn-next-" + index);
+            var mySwiper = new Swiper(".instance-" + index, {
+                // your settings ...
+                nextButton: ".btn-next-" + index,
+                prevButton: ".btn-prev-" + index
+            });
+        });
+     */
+
+
+
+ /*    var swiper = new Swiper('.swiper-container', {
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
     });
- */
-    
-
-    var mySwiper = new Swiper('.my-swiper', {
-        direction: 'vertical',
-        loop: true,
-    });
-    mySwiper.on('slideChange', function () {
-        console.log('.swiper-container', mySwiper.realIndex);
-    });
-/* 
-    mySwiper.on('init', function () {
-      });
- 
-    mySwiper.init();
-
-    console.log("Swiper is initialized:");
-    console.log(mySwiper);
-
-    mySwiper.on('slideChange', function () {
-        console.log("Current slide=" + mySwiper.activeIndex);
-        $("div.slider-titles/h3").each(function (i) {
-            if (i == mySwiper.activeIndex) this.addClass("highlightedNumber");
-            else this.removeClass("highlightedNumber");
-        });
+    swiper.on('slideChange', function () {
+        console.log('* mySwiper.realIndex', swiper.realIndex);
     }); */
+
+
+
+    /*    var mySwiper = new Swiper('.my-swiper', {
+            direction: 'vertical',
+            loop: true,
+        });
+        mySwiper.on('slideChange', function () {
+            console.log('.swiper-container', mySwiper.realIndex);
+        }); */
+    /* 
+        mySwiper.on('init', function () {
+        });
+        mySwiper.init();
+
+        console.log("Swiper is initialized:");
+        console.log(mySwiper);
+
+        mySwiper.on('slideChange', function () {
+            console.log("Current slide=" + mySwiper.activeIndex);
+            $("div.slider-titles/h3").each(function (i) {
+                if (i == mySwiper.activeIndex) this.addClass("highlightedNumber");
+                else this.removeClass("highlightedNumber");
+            });
+        }); */
 
     var nextBtn = $('.swiper-button-next');
     var prevtBtn = $('.swiper-button-prev');
