@@ -33,6 +33,9 @@
         &__text
             padding-left: 0.5rem
             padding-right: 0.5rem
+    .section
+        padding-left: 6%
+        padding-right: 6%
 @media screen and ( max-width: 767px )
     html
         font-size: 11px
@@ -49,6 +52,27 @@
             margin-left: 4rem
         &__text
             max-width: 380px
+    .projects
+        .col-50
+            width: 100%
+        .col-50:nth-child(2)
+            margin-top: 2.78rem
+        &.section
+            padding-top: 0
+        .section-title
+            margin-bottom: 1.45rem
+            &__text
+                max-width: 21.78rem
+                font-size: 1rem
+                line-height: 1.85rem
+        .swiper-slide
+            &__text
+                padding-bottom: 0
+                margin-bottom: 1rem
+                line-height: 1.5rem
+            &__text:nth-child(n+3)
+                margin-bottom: 4.29rem
+
     .row
         flex-direction: column
         align-items: center
@@ -61,13 +85,11 @@
     .card
         &__text
             margin-left: 0
-    // .design
-    //     background-color: $dark
-    //     &__section-title
-    //         color: $light
-    //     &__card
-    //         margin-bottom: 5.7rem
-
+    .section
+        padding-left: 7%
+        padding-right: 7%
+        &.control
+            padding-top: 0
 @media screen and ( max-width: 575px )
     html
         font-size: 12px
@@ -96,10 +118,9 @@
             max-width: 290px
         &__button
             display: block
-            min-width: 22.86rem
             text-align: center
-            width: 70%
             margin-bottom: 1.85rem
+            margin-right: auto
     .types
         padding-left: 18px
         padding-right: 18px
@@ -111,6 +132,10 @@
             margin-bottom: 3.3rem
             &__heading
                 font-size: 1.82rem
+            &__text
+                width: 22.92rem
+            &__word::after
+                content: none
     .design
         &__section-title
             margin-bottom: 1.6rem
@@ -132,6 +157,9 @@
             width: 191px
             padding: 1rem
             bottom: -0.87rem
+        .section
+            padding-left: 8%
+            padding-right: 8%
 @media screen and ( max-height: 450px  )
     .hero
         &__scroll-down
@@ -147,7 +175,6 @@
         font-size: 1.95rem
         line-height: 2.5rem
         letter-spacing: -0.3px
-        max-width: 100%
     .hero
         padding-top: 19px
         &__content
@@ -162,9 +189,13 @@
             letter-spacing: .024rem
             max-width: 380px
         &__button
-            width: 100%
             margin-bottom: 2.25rem
             padding: 19px 28px
             letter-spacing: .11rem
+        &__title
+            font-size: 1.643rem
+            line-height: 2.4rem
+            max-width: 65%
+
     .button--outline
         letter-spacing: .075rem
