@@ -145,4 +145,5 @@ $(document).ready(function () {
     nextBtn.css('left', prevtBtn.width() + 10 + bullets.width() + 10)
     bullets.css('left', prevtBtn.width() + 10)
 
+    new WOW().init();
 });
