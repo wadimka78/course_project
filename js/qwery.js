@@ -1,5 +1,5 @@
-/* document.addEventListener("DOMContentLoaded", function (event) {
-    const modal = document.querySelector('.modal');
+ document.addEventListener("DOMContentLoaded", function (event) {
+     /*  const modal = document.querySelector('.modal');
     const modalBtn = document.querySelectorAll('[data-toggle=modal]');
     const closeBtn = document.querySelector('.modal__close');
     const switchModal = () => {
@@ -30,120 +30,157 @@
 });
  */
 
-$(document).ready(function () {
-    var modal = $('.modal'),
-        modalBtn = $('[data-toggle=modal]');
-    closeBtn = $('.modal__close');
+     $(document).ready(function () {
+         var modal = $('.modal'),
+             modalBtn = $('[data-toggle=modal]');
+         closeBtn = $('.modal__close');
 
-    modalBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
-    });
-    closeBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
-    });
+         modalBtn.on('click', function () {
+             modal.toggleClass('modal--visible');
+         });
+         closeBtn.on('click', function () {
+             modal.toggleClass('modal--visible');
+         });
 
-    /*Закрытие по фону*/
+         /*Закрытие по фону*/
 
-    $(document).click(function (e) {
-        if ($(e.target).is('.modal')) {
-            modal.toggleClass('modal--visible');
-        }
-    });
+         $(document).click(function (e) {
+             if ($(e.target).is('.modal')) {
+                 modal.toggleClass('modal--visible');
+             }
+         });
 
-    /*Закрытие по кнопке*/
+         /*Закрытие по кнопке*/
 
-    $(document).keydown(function (e) {
-        if (e.keyCode === 27) {
-            modal.toggleClass('modal--visible');
-        }
-    });
+         $(document).keydown(function (e) {
+             if (e.keyCode === 27) {
+                 modal.toggleClass('modal--visible');
+             }
+         });
 
-    /*Кнопка прокрутки*/
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 100) {
-            $('#scroll_top').show();
-        } else {
-            $('#scroll_top').hide();
-        }
-    });
+         /*Кнопка прокрутки*/
+         $(window).scroll(function () {
+             if ($(window).scrollTop() > 100) {
+                 $('#scroll_top').show();
+             } else {
+                 $('#scroll_top').hide();
+             }
+         });
 
-    $('#scroll_top').click(function () {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 600);
-        return false;
-    });
+         $('#scroll_top').click(function () {
+             $('html, body').animate({
+                 scrollTop: 0
+             }, 600);
+             return false;
+         });
 
-        var mySwiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        }); 
+         var mySwiper = new Swiper('.swiper-container', {
+             loop: true,
+             pagination: {
+                 el: '.swiper-pagination',
+                 type: 'bullets',
+             },
+             navigation: {
+                 nextEl: '.swiper-button-next',
+                 prevEl: '.swiper-button-prev',
+             },
+         });
 
-    /*Тест*/
+         /*Тест*/
 
-    /*     $(".swiper-container").each(function(index, element){
-            var $this = $(this);
-            $this.addClass("instance-" + index);
-            $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
-            $this.find(".swiper-button-next").addClass("btn-next-" + index);
-            var mySwiper = new Swiper(".instance-" + index, {
-                // your settings ...
-                nextButton: ".btn-next-" + index,
-                prevButton: ".btn-prev-" + index
+         /*     $(".swiper-container").each(function(index, element){
+                 var $this = $(this);
+                 $this.addClass("instance-" + index);
+                 $this.find(".swiper-button-prev").addClass("btn-prev-" + index);
+                 $this.find(".swiper-button-next").addClass("btn-next-" + index);
+                 var mySwiper = new Swiper(".instance-" + index, {
+                     // your settings ...
+                     nextButton: ".btn-next-" + index,
+                     prevButton: ".btn-prev-" + index
+                 });
+             });
+          */
+
+
+
+         /*    var swiper = new Swiper('.swiper-container', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
             });
-        });
-     */
+            swiper.on('slideChange', function () {
+                console.log('* mySwiper.realIndex', swiper.realIndex);
+            }); */
 
 
 
- /*    var swiper = new Swiper('.swiper-container', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-    swiper.on('slideChange', function () {
-        console.log('* mySwiper.realIndex', swiper.realIndex);
-    }); */
+         /*    var mySwiper = new Swiper('.my-swiper', {
+                 direction: 'vertical',
+                 loop: true,
+             });
+             mySwiper.on('slideChange', function () {
+                 console.log('.swiper-container', mySwiper.realIndex);
+             }); */
+         /* 
+             mySwiper.on('init', function () {
+             });
+             mySwiper.init();
 
+             console.log("Swiper is initialized:");
+             console.log(mySwiper);
 
+             mySwiper.on('slideChange', function () {
+                 console.log("Current slide=" + mySwiper.activeIndex);
+                 $("div.slider-titles/h3").each(function (i) {
+                     if (i == mySwiper.activeIndex) this.addClass("highlightedNumber");
+                     else this.removeClass("highlightedNumber");
+                 });
+             }); */
 
-    /*    var mySwiper = new Swiper('.my-swiper', {
-            direction: 'vertical',
-            loop: true,
-        });
-        mySwiper.on('slideChange', function () {
-            console.log('.swiper-container', mySwiper.realIndex);
-        }); */
-    /* 
-        mySwiper.on('init', function () {
-        });
-        mySwiper.init();
+         var nextBtn = $('.swiper-button-next');
+         var prevtBtn = $('.swiper-button-prev');
+         var bullets = $('.swiper-pagination');
 
-        console.log("Swiper is initialized:");
-        console.log(mySwiper);
+         nextBtn.css('left', prevtBtn.width() + 10 + bullets.width() + 10)
+         bullets.css('left', prevtBtn.width() + 10)
 
-        mySwiper.on('slideChange', function () {
-            console.log("Current slide=" + mySwiper.activeIndex);
-            $("div.slider-titles/h3").each(function (i) {
-                if (i == mySwiper.activeIndex) this.addClass("highlightedNumber");
-                else this.removeClass("highlightedNumber");
-            });
-        }); */
+         new WOW().init();
+     });
 
-    var nextBtn = $('.swiper-button-next');
-    var prevtBtn = $('.swiper-button-prev');
-    var bullets = $('.swiper-pagination');
+     //*Анимация
 
-    nextBtn.css('left', prevtBtn.width() + 10 + bullets.width() + 10)
-    bullets.css('left', prevtBtn.width() + 10)
+     var block_show = false;
 
-    new WOW().init();
-});
+     function scrollTracking() {
+         if (block_show) {
+             return false;
+         }
+
+         var wt = $(window).scrollTop();
+         var wh = $(window).height();
+         var et = $('.move').offset().top;
+         var eh = $('.move').outerHeight();
+         var dh = $(document).height();
+
+         if (wt + wh >= et || wh + wt == dh || eh + et < wh) {
+             block_show = true;
+             // Код анимации
+             $('.move div:eq(0)').show('fast', function () {
+                 $(this).next().show('fast', arguments.callee);
+             });
+         }
+     }
+//*отслеживание элемента
+     /*      $(window).scroll(function(){
+             var wt = $(window).scrollTop();
+             var wh = $(window).height();
+             var et = $('.move').offset().top;
+             var eh = $('.move').outerHeight();
+             var dh = $(document).height();   
+             if (wt + wh >= et || wh + wt == dh || eh + et < wh){
+                 console.log('Элемент показан');
+             }
+         }); */
+
+ });

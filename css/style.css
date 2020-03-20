@@ -1267,6 +1267,45 @@ img {
       align-self: flex-end;
 }
 
+.projects {
+  padding-bottom: 30rem;
+}
+
+.projects .col-50:nth-child(1) {
+  -webkit-animation: fadeInLeft 2s;
+          animation: fadeInLeft 2s;
+}
+
+.projects .col-50:nth-child(2) {
+  -webkit-animation: fadeIn 5s;
+          animation: fadeIn 5s;
+}
+
+.control__video {
+  -webkit-animation: zoomIn 2s;
+          animation: zoomIn 2s;
+}
+
+.control__text {
+  -webkit-animation: slideInUp 2s;
+          animation: slideInUp 2s;
+}
+
+.types .col-30 {
+  -webkit-animation: fadeInRight 2s;
+          animation: fadeInRight 2s;
+}
+
+.design .col-30 {
+  -webkit-animation: fadeInLeft 2s;
+          animation: fadeInLeft 2s;
+}
+
+.six-steps .section-title {
+  -webkit-animation: zoomIn 2s;
+          animation: zoomIn 2s;
+}
+
 @media screen and (min-width: 1440px) {
   .section .container {
     max-width: 1440px;
@@ -1432,11 +1471,18 @@ img {
     margin-bottom: 1.85rem;
     margin-right: auto;
   }
-  .types, .design {
+  .types {
     padding-left: 18px;
     padding-right: 18px;
   }
   .types__card {
+    margin-bottom: 5.7rem;
+  }
+  .design {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .design__card {
     margin-bottom: 5.7rem;
   }
   .section-title {

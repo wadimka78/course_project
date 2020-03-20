@@ -1,0 +1,14 @@
+.projects {
+  padding-bottom: 30rem;
+}
+
+.projects .col-50:nth-child(1) {
+  -webkit-animation: fadeInLeft 2s;
+          animation: fadeInLeft 2s;
+}
+
+.projects .col-50:nth-child(2) {
+  -webkit-animation: fadeIn 5 s;
+          animation: fadeIn 5 s;
+}
+/*# sourceMappingURL=animation.css.map */
