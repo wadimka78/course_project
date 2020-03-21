@@ -133,6 +133,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }); */
 
     // Валидация формы
+
+    //Модальное окно
     $('.modal__form').validate({
         errorClass: "invalid",
         rules: {
@@ -142,28 +144,116 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 minlength: 2,
                 maxlength: 15
             },
-            userPhone: "required",
+            userPhone: {
+                required: true,
+                minlength: 8
+            },
             // правило-объект (блок)
             userEmail: {
                 required: true,
                 email: true
-            }
+            },
+            userQuestion: "required"
+
         }, // сообщения
         messages: {
             userName: {
                 required: "Имя обязательно",
                 minlength: "Врёшь, сволочь!",
-                maxlength: "У тебя клавиша залипла, да ?"
+                maxlength: "Чувак, у тебя залипла клава!"
             },
-            userPhone: "Тяляфон тожэ обызатэлэн!!!",
+            userPhone: {
+                required: "Тэляфон тожэ обызатэлэн!!!",
+                minlength: "Добавь циферек, жалко что ли ?",
+            },
             userEmail: {
                 required: "Заполните поле",
                 email: "Введите корректный email"
+            },
+            userQuestion: {
+                required: "Хотел спросить - спрашивай!"
             }
         }
     });
 
-// маска для номера телефона
-$('[type=tel]').mask('+7(000) 000-00-00', {placeholder: "+7 (__) ___-__-__"});
+//Секция "Control"
+
+$('.control__form').validate({
+    errorClass: "invalid",
+    rules: {
+        // строчное правило {required:true}
+        userNameControl: {
+            required: true,
+            minlength: 2,
+            maxlength: 15
+        },
+        userPhoneControl: {
+            required: true,
+            minlength: 9
+        }
+    }, // сообщения
+    messages: {
+        userNameControl: {
+            required: "Имя обязательно",
+            minlength: "Врёшь, сволочь!",
+            maxlength: "Чувак, у тебя залипла клава!"
+        },
+        userPhoneControl: {
+            required: "Телефон обязателен. Всё обязательно!",
+            minlength: "Добавь циферек, жалко что ли ?",
+        }
+    }
+});
+
+
+
+//Футер
+
+$('.footer__form').validate({
+    errorClass: "invalid",
+    rules: {
+        // строчное правило {required:true}
+        userNameFooter: {
+            required: true,
+            minlength: 2,
+            maxlength: 15
+        },
+        userPhoneFooter: {
+            required: true,
+            minlength: 10
+        },
+        // правило-объект (блок)
+        userEmailFooter: {
+            required: true,
+            email: true
+        },
+        userQuestionFooter: "required"
+
+    }, // сообщения
+    messages: {
+        userNameFooter: {
+            required: "Имя обязательно",
+            minlength: "Врёшь, сволочь!",
+            maxlength: "Чувак, у тебя залипла клава!"
+        },
+        userPhoneFooter: {
+            required: "Телефон обязателен. Всё обязательно!",
+            minlength: "Добавь циферек, жалко что ли ?",
+        },
+        userEmailFooter: {
+            required: "Заполните поле",
+            email: "Введите корректный email"
+        },
+        userQuestionFooter: {
+            required: "Хотел спросить - спрашивай!"
+        }
+    }
+});
+
+
+    // маска для номера телефона
+    $('[type=tel]').mask('+7(000) 000-00-00', {
+        placeholder: "+7 (__) ___-__-__"
+    });
 
 });
