@@ -986,10 +986,6 @@ img {
   margin-right: .95rem;
 }
 
-.design .col-60 {
-  padding-top: 6.6rem;
-}
-
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1019,7 +1015,7 @@ img {
 }
 
 .slide-name {
-  width: 30%;
+  width: 20%;
   margin-bottom: 35px;
   text-align: left;
 }
@@ -1061,6 +1057,11 @@ img {
   margin-top: 10px;
 }
 
+.six-steps .section-title__text:nth-of-type(2) {
+  max-width: 22rem;
+  padding-bottom: 10px;
+}
+
 .six-steps .section-title__heading {
   margin-top: 1rem;
   letter-spacing: 0px;
@@ -1081,10 +1082,33 @@ img {
   max-width: 16rem;
   line-height: 1.58rem;
   font-size: 1rem;
+  letter-spacing: 0.8px;
 }
 
 .six-steps .col-60 {
   padding-top: 6.6rem;
+}
+
+.six-steps .col-60 .swiper-container {
+  margin-left: -20px;
+}
+
+.six-steps .slider-titles__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: -20px;
+}
+
+.six-steps .slider-titles__row:nth-child(2) {
+  margin-top: -12px;
+  margin-bottom: 12px;
 }
 
 .highlightedNumber {
@@ -1475,6 +1499,10 @@ img {
   .six-steps .row {
     max-width: 1236px;
     padding-left: 2.8rem;
+  }
+  .six-steps .slider-titles {
+    width: 59.43rem;
+    margin-top: -5px;
   }
 }
 

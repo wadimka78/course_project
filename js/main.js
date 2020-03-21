@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var prevtBtn = $('.swiper-button-prev');
         var bullets = $('.swiper-pagination');
 
-        nextBtn.css('left', prevtBtn.width() + 10 + bullets.width() + 10)
-        bullets.css('left', prevtBtn.width() + 10)
+        nextBtn.css('left', prevtBtn.width() + 20 + bullets.width() + 20)
+        bullets.css('left', prevtBtn.width() + 20)
 
         new WOW().init();
     });
