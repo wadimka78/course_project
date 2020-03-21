@@ -426,7 +426,7 @@ template {
   visibility: hidden;
 }
 
-.policy__checkbox:checked + .policy__label::before {
+.policy__checkbox:checked ~ .policy__label::before {
   background: #E3B873 url("../img/check.png") no-repeat center/0.8rem;
 }
 
@@ -1328,6 +1328,15 @@ img {
 .video__play {
   position: relative;
   margin: auto;
+}
+
+.design .section-title {
+  margin-bottom: 1.3rem;
+}
+
+.design .section-title__heading {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
 }
 
 .modal {
