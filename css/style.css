@@ -1339,6 +1339,10 @@ img {
   margin-top: -34.81rem;
 }
 
+.our-team .col-30 {
+  position: relative;
+}
+
 .our-team .section-title {
   margin-bottom: 1.3rem;
 }
@@ -1359,6 +1363,34 @@ img {
   line-height: 2rem;
   text-align: center;
   padding-left: .4rem;
+}
+
+.our-team .col-30::before {
+  content: '';
+  position: absolute;
+  top: -48px;
+  left: 0px;
+  width: 7.857rem;
+  height: 7.857rem;
+  z-index: 3;
+}
+
+.our-team .col-30:nth-child(1)::before {
+  background: url("../img/our-team/001.svg") no-repeat center/cover;
+}
+
+.our-team .col-30:nth-child(2)::before {
+  background: url("../img/our-team/002.svg") no-repeat center/cover;
+}
+
+.our-team .col-30:nth-child(3)::before {
+  background: url("../img/our-team/003.svg") no-repeat center/cover;
+}
+
+.our-team__row {
+  padding-top: 2.6rem;
+  max-width: 90rem;
+  margin: auto;
 }
 
 .modal {
