@@ -460,6 +460,10 @@ label.invalid {
   color: tomato;
 }
 
+form .invalid {
+  color: tomato;
+}
+
 input.invalid {
   border-bottom: 1px solid red;
 }
@@ -1042,6 +1046,7 @@ img {
 
 .six-steps {
   margin-top: -10.6rem;
+  padding-bottom: 35.8rem;
 }
 
 .six-steps .section-title__word::after {
@@ -1330,13 +1335,30 @@ img {
   margin: auto;
 }
 
-.design .section-title {
+.our-team {
+  margin-top: -34.81rem;
+}
+
+.our-team .section-title {
   margin-bottom: 1.3rem;
 }
 
-.design .section-title__heading {
+.our-team .section-title__heading {
   font-size: 1.6rem;
   margin-bottom: 12px;
+  color: #fff;
+}
+
+.our-team__subtitle {
+  max-width: 32rem;
+  margin: auto;
+  margin-bottom: 3.1rem;
+  color: #fff;
+  font-size: 1.43rem;
+  font-weight: 400;
+  line-height: 2rem;
+  text-align: center;
+  padding-left: .4rem;
 }
 
 .modal {
