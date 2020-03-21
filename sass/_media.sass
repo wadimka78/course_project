@@ -6,7 +6,7 @@
     .hero
         height: 61.1vh
     .projects
-        &__row
+        & .row
             max-width: 1236px
             margin: auto
         & .swiper-slide
@@ -31,11 +31,14 @@
                 font-size: 1.6rem
                 margin-top: 23px
                 margin-bottom: 15px
+    .six-steps
+        & .row
+            max-width: 1236px
+            padding-left: 2.8rem
 @media screen and ( min-width: 16000px)
-    .projects
+    .projects, .six-steps
         &__row
             max-width: unset
-
 @media screen and (min-width: 1200px)and ( max-width: 1359px)
     html
         font-size: 13px
