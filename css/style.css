@@ -456,8 +456,9 @@ template {
           justify-content: center;
 }
 
-label.invalid {
-  color: tomato;
+div.invalid {
+  position: absolute;
+  bottom: -8px;
 }
 
 form .invalid {
@@ -1341,6 +1342,8 @@ img {
 
 .our-team .col-30 {
   position: relative;
+  margin-left: .95rem;
+  margin-right: .95rem;
 }
 
 .our-team .section-title {
@@ -1356,11 +1359,11 @@ img {
 .our-team__subtitle {
   max-width: 32rem;
   margin: auto;
-  margin-bottom: 3.1rem;
+  margin-bottom: 3.4rem;
   color: #fff;
   font-size: 1.43rem;
   font-weight: 400;
-  line-height: 2rem;
+  line-height: 1.8rem;
   text-align: center;
   padding-left: .4rem;
 }
@@ -1369,7 +1372,7 @@ img {
   content: '';
   position: absolute;
   top: -50px;
-  left: 0px;
+  left: -14px;
   width: 7.857rem;
   height: 7.857rem;
   z-index: 3;
@@ -1389,7 +1392,7 @@ img {
 
 .our-team__row {
   padding-top: 2.6rem;
-  max-width: 90rem;
+  max-width: 83.7rem;
   margin: auto;
 }
 
@@ -1493,7 +1496,12 @@ img {
           flex-direction: column;
 }
 
+.modal__form div:nth-child(4) .modal__policy div {
+  bottom: 14px;
+}
+
 .modal__input-group {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

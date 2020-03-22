@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 email: "Введите корректный email"
             },
             policyCheckbox: {
-                required:  "Галку забыл, редиска!", //Не работает (((
+                required:  "Поставь галку, редиска!",
             },
         }
     });
@@ -246,9 +246,6 @@ $('.video__play').on('click', function onYouTubeIframeAPIReady() {
 function videoPlay(event) {
     event.target.playVideo();
 }
-
-
-
 
 });
 
