@@ -1368,6 +1368,7 @@ img {
 }
 
 .control__policy {
+  position: relative;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   margin-top: 1.2rem;
@@ -1379,6 +1380,11 @@ img {
           justify-content: center;
   margin-left: -4.643rem;
   margin-top: -2px;
+}
+
+.control__policy div.invalid {
+  left: 28.7%;
+  bottom: -22px;
 }
 
 .video__play {

@@ -164,7 +164,10 @@ $('.control__form').validate({
         userPhoneControl: {
             required: true,
             minlength: 9
-        }
+        },
+        controlCheckbox: {
+            required: true
+        },
     }, // сообщения
     messages: {
         userNameControl: {
@@ -175,6 +178,9 @@ $('.control__form').validate({
         userPhoneControl: {
             required: "Телефон обязателен. Всё обязательно!",
             minlength: "Добавь циферек, жалко что ли ?",
+        },
+        controlCheckbox: {
+            required:  "Ничё не забыл?",
         }
     }
 });
