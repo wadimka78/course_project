@@ -1485,6 +1485,89 @@ img {
   margin-bottom: 0.7rem;
 }
 
+.clients .container {
+  background: #fff url("../img/clients/clients_bcg.png") no-repeat center;
+  background-size: contain;
+  background-position-y: bottom;
+}
+
+.clients .col-30 {
+  margin-left: .95rem;
+  margin-right: .95rem;
+}
+
+.clients .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 90rem;
+  margin: auto;
+}
+
+.clients .section-title__heading {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.clients__subtitle--width {
+  max-width: 25rem;
+  margin-top: 1.36rem;
+  margin-bottom: 4.14rem;
+}
+
+.people {
+  background-color: #fff;
+  background-color: green;
+  padding: 10px 20px;
+}
+
+.people__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.people__wrap img {
+  border-radius: 50%;
+}
+
+.people__reviews {
+  display: block;
+  font-size: 1.1rem;
+  padding-top: 8px;
+  line-height: 1.93rem;
+}
+
+.people__name {
+  color: #181818;
+  font-family: "Yeseva One";
+  font-size: 1.286rem;
+  font-weight: 400;
+  text-align: left;
+  padding: 17px 0px 20px 24px;
+  line-height: 1.7rem;
+}
+
+.tasks {
+  margin: 40px auto -10px -20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #E3B873;
+}
+
+.tasks__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .modal {
   opacity: 0;
   visibility: hidden;
