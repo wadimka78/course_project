@@ -1184,7 +1184,7 @@ img {
 .footer__policy {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 3.6rem;
 }
 
 .footer__button {
@@ -1195,6 +1195,45 @@ img {
 .footer__menu {
   background-color: #131313;
   padding: 4.285rem 0;
+}
+
+.footer__map {
+  margin-bottom: 4rem;
+  min-height: 465px;
+  max-width: 66.07rem;
+  margin: auto;
+  margin-top: 2.8rem;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.footer__section-title--adress {
+  text-align: center;
+  font-size: 1.529rem;
+  letter-spacing: -1px;
+  margin-top: -0.2rem;
+}
+
+.footer__section-title--phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__icons {
+  text-align: center;
+  padding-top: 4px;
+}
+
+.footer__icons span:nth-child(1) {
+  padding-right: 11px;
+}
+
+.footer__icons span:nth-child(2) {
+  padding-right: 5px;
 }
 
 @media screen and (max-width: 375px) {

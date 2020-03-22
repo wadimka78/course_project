@@ -246,6 +246,42 @@ $('.video__play').on('click', function onYouTubeIframeAPIReady() {
 function videoPlay(event) {
     event.target.playVideo();
 }
+//Создание карты
+
+    // Функция ymaps.ready() будет вызвана, когда
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+                center: [47.222078, 39.720349],
+                zoom: 9
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+    
+            // Создаём макет содержимого.
+            MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            ),
+    
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                hintContent: 'Наш офис',
+                balloonContent: 'Курительные смеси и лёгкие наркотики. Всё для Вас!'
+            }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: 'img/marker.png',
+                // Размеры метки.
+                iconImageSize: [42, 60],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-5, -38]
+            });
+    
+        myMap.geoObjects
+            .add(myPlacemark);
+
+    });
 
 });
 
