@@ -959,6 +959,10 @@ img {
   padding: 1.214rem 2.6rem;
 }
 
+.design {
+  margin-bottom: -35.4rem;
+}
+
 .design .section-title {
   margin-bottom: 1.3rem;
 }
@@ -1048,6 +1052,7 @@ img {
 .six-steps {
   margin-top: -10.6rem;
   padding-bottom: 35.8rem;
+  padding-top: 29.2rem;
 }
 
 .six-steps .section-title__word::after {
@@ -1505,7 +1510,7 @@ img {
           justify-content: space-between;
   max-width: 90rem;
   margin: auto;
-  padding-bottom: 25.3rem;
+  padding-bottom: 27.6rem;
 }
 
 .clients .section-title__heading {
@@ -1523,6 +1528,8 @@ img {
 .people {
   background-color: #fff;
   padding: 10px 24px 10px 20px;
+  -webkit-box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
 }
 
 .people__wrap {
@@ -1561,7 +1568,7 @@ img {
   display: flex;
   background-color: #E3B873;
   max-width: 88%;
-  margin: 44px auto -10px -20px;
+  margin: 44px auto -40px -20px;
   height: 3.8rem;
 }
 
