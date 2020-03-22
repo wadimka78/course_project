@@ -1,34 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    /*  const modal = document.querySelector('.modal');
-    const modalBtn = document.querySelectorAll('[data-toggle=modal]');
-    const closeBtn = document.querySelector('.modal__close');
-    const switchModal = () => {
-        modal.classList.toggle('modal--visible');
-    };
-    modalBtn.forEach(element => {
-        element.addEventListener('click', switchModal);
-        closeBtn.addEventListener('click', switchModal);
-    });
 
-
-
-
-    modal.addEventListener("click", function (event) {
-        var target = event.target;
-        if (target.closest(".modal__dialog") && !target.closest(".form__input") && !target.closest(".form__label"))
-            event.stopPropagation();
-        else
-            modal.classList.toggle('modal--visible');
-    });
-
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            modal.classList.toggle('modal--visible');
-        } 
-    });
-});
- */
 
     $(document).ready(function () {
         var modal = $('.modal'),
@@ -153,6 +124,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 required: true,
                 email: true
             },
+            policyCheckbox: {
+                required: true
+            },
             userQuestion: "required"
 
         }, // сообщения
@@ -170,9 +144,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 required: "Заполните поле",
                 email: "Введите корректный email"
             },
-            userQuestion: {
-                required: "Хотел спросить - спрашивай!"
-            }
+            policyCheckbox: {
+                required:  "Галку забыл, редиска!", //Не работает (((
+            },
         }
     });
 
@@ -256,4 +230,26 @@ $('.footer__form').validate({
         placeholder: "+7 (__) ___-__-__"
     });
 
+//Плеер
+var player;
+$('.video__play').on('click', function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '570',
+        width: '100%',
+        videoId: 'RAgUDsgKENg',
+        events: {
+            'onReady': videoPlay
+        }
+    });
+    $('.video__play').css('max-height', '31rem');
 });
+function videoPlay(event) {
+    event.target.playVideo();
+}
+
+
+
+
+});
+
+

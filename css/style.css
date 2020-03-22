@@ -1368,7 +1368,7 @@ img {
 .our-team .col-30::before {
   content: '';
   position: absolute;
-  top: -48px;
+  top: -50px;
   left: 0px;
   width: 7.857rem;
   height: 7.857rem;
@@ -1391,6 +1391,39 @@ img {
   padding-top: 2.6rem;
   max-width: 90rem;
   margin: auto;
+}
+
+.our-team .card__text {
+  display: block;
+  max-width: 16.6rem;
+  margin-top: -6.1rem;
+  padding: 1.5rem 0;
+}
+
+.our-team .card__pricetag {
+  position: relative;
+  bottom: -1.39rem;
+  display: block;
+  font-size: 0.9rem;
+  padding: 1.07rem 2.6rem;
+}
+
+.our-team .card__title {
+  text-align: center;
+  margin: 0;
+}
+
+.our-team .card__items {
+  font-size: 1.28rem;
+  margin: 6px;
+}
+
+.our-team .control__text {
+  margin-top: 3.7rem;
+}
+
+.our-team .control__text::before {
+  margin-bottom: 0.7rem;
 }
 
 .modal {
