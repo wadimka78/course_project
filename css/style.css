@@ -1194,15 +1194,14 @@ img {
 
 .footer__menu {
   background-color: #131313;
-  padding: 4.285rem 0;
+  padding: 3.4rem 0;
 }
 
 .footer__map {
   margin-bottom: 4rem;
   min-height: 465px;
   max-width: 66.07rem;
-  margin: auto;
-  margin-top: 2.8rem;
+  margin: 2.8rem auto 4.8rem auto;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
