@@ -194,12 +194,11 @@ $('.footer__form').validate({
         },
         userPhoneFooter: {
             required: true,
-            minlength: 10
+            minlength: 7
         },
         // правило-объект (блок)
-        userEmailFooter: {
-            required: true,
-            email: true
+        footerCheckbox: {
+            required: true
         },
         userQuestionFooter: "required"
 
@@ -214,13 +213,12 @@ $('.footer__form').validate({
             required: "Телефон обязателен. Всё обязательно!",
             minlength: "Добавь циферек, жалко что ли ?",
         },
-        userEmailFooter: {
-            required: "Заполните поле",
-            email: "Введите корректный email"
-        },
         userQuestionFooter: {
             required: "Хотел спросить - спрашивай!"
-        }
+        },
+        footerCheckbox: {
+            required:  "Не тормози! Одна галочка решит все наши будущие проблемы!)",
+        },
     }
 });
 

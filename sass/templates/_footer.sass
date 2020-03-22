@@ -25,6 +25,7 @@
     &__input
         padding-top: 0.3rem
         &-group
+            position: relative
             display: flex
             flex-direction: column
             flex-basis: 45%
@@ -32,9 +33,15 @@
             &--full-width
                 flex-basis: 100%
                 margin-bottom: 2rem
+            & div.invalid
+                bottom: -22px
     &__policy
+        position: relative
         flex-basis: 100%
         margin-bottom: 3.6rem
+        & div.invalid
+            transform: translateX(35%)
+            bottom: -22px
     &__button
         margin: auto
         padding: 1.285rem 4.785rem

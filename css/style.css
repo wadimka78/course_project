@@ -1163,6 +1163,7 @@ img {
 }
 
 .footer__input-group {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1181,10 +1182,21 @@ img {
   margin-bottom: 2rem;
 }
 
+.footer__input-group div.invalid {
+  bottom: -22px;
+}
+
 .footer__policy {
+  position: relative;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   margin-bottom: 3.6rem;
+}
+
+.footer__policy div.invalid {
+  -webkit-transform: translateX(35%);
+          transform: translateX(35%);
+  bottom: -22px;
 }
 
 .footer__button {
