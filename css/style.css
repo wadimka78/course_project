@@ -697,7 +697,7 @@ img {
   padding-top: 100px;
   background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
   /** height: 54.86vw **/
-  height: 100vh;
+  height: calc(100vh - 7.92rem);
   color: #fff;
 }
 
@@ -1568,9 +1568,6 @@ img {
   .section .container {
     max-width: 1438px;
   }
-  .hero {
-    height: calc(100vh - 7.92rem);
-  }
   .projects .row {
     max-width: 1236px;
     margin: auto;
@@ -1647,6 +1644,9 @@ img {
   }
   .nav {
     display: none;
+  }
+  .hero {
+    height: 100vh;
   }
   .hero__instagram {
     display: none;
