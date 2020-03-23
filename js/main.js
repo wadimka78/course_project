@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-
-
+    var modal = $('.modal');
     $(document).ready(function () {
         var modal = $('.modal'),
             modalBtn = $('[data-toggle=modal]');
@@ -138,15 +137,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
             },
             userPhone: {
                 required: "Тэляфон тожэ обызатэлэн!!!",
-                minlength: "Добавь циферек, жалко что ли ?",
+                minlength: "Добавь циферек, жалко что ли ?"
             },
             userEmail: {
                 required: "Заполните поле",
                 email: "Введите корректный email"
             },
             policyCheckbox: {
-                required: "Поставь галку, редиска!",
-            },
+                required: "Поставь галку, редиска!"
+            }
+        },
+        submitHandler: function(form) {
+            $.ajax({
+                type: "POST",
+                url: "send.php",
+                data: $(form).serialize(),
+                success: function (response) {
+                    alert('Форма отправлена, ждите санитаров');
+                    console.log(modal);
+                    $(form)[0].reset();
+                    modal.removeClass('modal--visible');
+                }
+            });
         }
     });
 
@@ -177,26 +189,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
             },
             userPhone: {
                 required: "Телефон обязателен. Всё обязательно!",
-                minlength: "Добавь циферек, жалко что ли ?",
+                minlength: "Добавь циферек, жалко что ли ?"
             },
             controlCheckbox: {
-                required: "Ничё не забыл?",
+                required: "Ничё не забыл?"
             }
         },
-        //отправка формы через аякс
-        submitHandler: function (form) {
+        submitHandler: function(form) {
             $.ajax({
                 type: "POST",
-                url: "sendControl.php",
-                data: $(".control__form").serialize(), //Преобразует данные формы в строку, пригодную для использования в URL
+                url: "send.php",
+                data: $(form).serialize(),
                 success: function (response) {
-                    //control.on('.modalSend');
-                    $(form)[0].reset(); // чистит поля после отправки формы
-                    $('.modalSend').fadeIn();
+                    alert('Трансляция платная! Переведите 350wmz на мой WMZ-кошелек');
+                    $(form)[0].reset();
                 }
             });
         }
-
     });
 
 
@@ -238,18 +247,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
             },
             footerCheckbox: {
                 required: "Не тормози! Одна галочка решит все наши будущие проблемы!)",
-            },
+            }
         },
-        //отправка формы через аякс
-        submitHandler: function (form) {
+        submitHandler: function(form) {
             $.ajax({
                 type: "POST",
-                url: "sendFooter.php",
-                data: $(".footer__form").serialize(), //Преобразует данные формы в строку, пригодную для использования в URL
+                url: "send.php",
+                data: $(form).serialize(),
                 success: function (response) {
-                    //footer.on('.modalSend');
-                    $(form)[0].reset(); // чистит поля после отправки формы
-                    $('.modalSend').fadeIn();
+                    alert('За спрос денег не берут! Но для тебя сделаем исключение))');
+                    $(form)[0].reset();
                 }
             });
         }

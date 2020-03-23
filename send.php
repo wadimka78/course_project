@@ -35,7 +35,7 @@ try {
     $mail->Body    = "Имя пользователя: ${userName}, его телефон: ${userPhone}. Его почта: ${userEmail}, его вопрос: ${userQuestion}";
 
     if ($mail->send()) {
-        echo "ok";
+     echo  "Зашибись!" // header('location: thanks.html');
     } else {
         echo "Ничего не ушло, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
     }

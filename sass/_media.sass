@@ -36,7 +36,7 @@
         .slider-titles
             width: 59.43rem
             margin-top: -5px
-@media screen and ( min-width: 16000px)
+@media screen and ( min-width: 1600px)
     .projects, .six-steps
         &__row
             max-width: unset
@@ -46,6 +46,9 @@
     .nav
         &__item
             margin-right: 1.1rem
+@media screen and ( min-width: 768px)
+    .fantazy
+        display: none
 @media screen and ( max-width: 1199px  )
     html
         font-size: 12px
@@ -62,16 +65,28 @@
     .nav
         display: none
     .hero
-        height: 100vh
+       // height: 100vh
         &__instagram
             display: none
         &__scroll-down    
             bottom: 0
             min-height: 5rem
+    .projects
+        & .section-title
+            &__text
+                padding-right: 10px
+    .six-steps
+        & .section-title
+            &__heading
+                font-size: 1.6rem
+            &__word::after
+                margin-left: 2.5rem
+                margin-bottom: 25px
     .card
         &__text
             padding-left: 0.5rem
             padding-right: 0.5rem
+            width: 90%
     .section
         padding-left: 6%
         padding-right: 6%
@@ -88,9 +103,11 @@
         margin: auto
     .hero
         &__content
-            margin-left: 4rem
+            margin-left: 10rem
         &__text
             max-width: 380px
+        &__instagram
+            max-width: 4.2rem
     .projects
         .col-50
             width: 100%
@@ -111,16 +128,37 @@
                 line-height: 1.5rem
             &__text:nth-child(n+3)
                 margin-bottom: 4.29rem
-
     .row
         flex-direction: column
         align-items: center
     .types
         &__card
             margin-bottom: 5rem
+        &__section-title
+            margin-top: -6rem
+    .fantazy
+        margin-top: -10rem
+        margin-bottom: -16.5rem
     .design
+        background-color: $background-black
+        color: $light
+        &__subtitle
+            color: $light
         &__card
             margin-bottom: 5rem
+        &__section-title
+            padding-top: 11rem
+    .our-team
+        margin-top: 26rem
+        margin-bottom: 7rem
+        background-color: $background-black
+        & .control
+            &__text
+                display: none
+        & .col-30
+            margin-bottom: 7rem
+    .six-steps, .clients
+        display: none
     .card
         &__text
             margin-left: 0
@@ -128,7 +166,7 @@
         padding-left: 7%
         padding-right: 7%
         &.control
-            padding-top: 0
+            //padding-top: 0
 @media screen and ( max-width: 575px )
     html
         font-size: 12px
@@ -149,8 +187,9 @@
         &__content
             max-width: 100%
             margin: 0px 1.46rem
+            margin-left: 4rem
             position: absolute
-            top: 11.7rem
+            top: 11.7rem 
         &__text
             font-size: 1.29rem
             margin-bottom: 2.28rem
