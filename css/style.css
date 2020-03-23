@@ -1702,6 +1702,10 @@ img {
   margin-right: 2.142rem;
 }
 
+.modal div.invalid {
+  bottom: -18px;
+}
+
 .projects {
   padding-bottom: 23.8rem;
 }

@@ -145,88 +145,115 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 email: "Введите корректный email"
             },
             policyCheckbox: {
-                required:  "Поставь галку, редиска!",
+                required: "Поставь галку, редиска!",
             },
         }
     });
 
-//Секция "Control"
+    //Секция "Control"
 
-$('.control__form').validate({
-    errorClass: "invalid",
-    rules: {
-        // строчное правило {required:true}
-        userNameControl: {
-            required: true,
-            minlength: 2,
-            maxlength: 15
+    $('.control__form').validate({
+        errorClass: "invalid",
+        rules: {
+            // строчное правило {required:true}
+            userName: {
+                required: true,
+                minlength: 2,
+                maxlength: 15
+            },
+            userPhone: {
+                required: true,
+                minlength: 8
+            },
+            controlCheckbox: {
+                required: true
+            },
+        }, // сообщения
+        messages: {
+            userName: {
+                required: "Имя обязательно",
+                minlength: "Врёшь, сволочь!",
+                maxlength: "Чувак, у тебя залипла клава!"
+            },
+            userPhone: {
+                required: "Телефон обязателен. Всё обязательно!",
+                minlength: "Добавь циферек, жалко что ли ?",
+            },
+            controlCheckbox: {
+                required: "Ничё не забыл?",
+            }
         },
-        userPhoneControl: {
-            required: true,
-            minlength: 8
-        },
-        controlCheckbox: {
-            required: true
-        },
-    }, // сообщения
-    messages: {
-        userNameControl: {
-            required: "Имя обязательно",
-            minlength: "Врёшь, сволочь!",
-            maxlength: "Чувак, у тебя залипла клава!"
-        },
-        userPhoneControl: {
-            required: "Телефон обязателен. Всё обязательно!",
-            minlength: "Добавь циферек, жалко что ли ?",
-        },
-        controlCheckbox: {
-            required:  "Ничё не забыл?",
+        //отправка формы через аякс
+        submitHandler: function (form) {
+            $.ajax({
+                type: "POST",
+                url: "sendControl.php",
+                data: $(".control__form").serialize(), //Преобразует данные формы в строку, пригодную для использования в URL
+                success: function (response) {
+                    //control.on('.modalSend');
+                    $(form)[0].reset(); // чистит поля после отправки формы
+                    $('.modalSend').fadeIn();
+                }
+            });
         }
-    }
-});
+
+    });
 
 
 
-//Футер
+    //Футер
 
-$('.footer__form').validate({
-    errorClass: "invalid",
-    rules: {
-        // строчное правило {required:true}
-        userNameFooter: {
-            required: true,
-            minlength: 2,
-            maxlength: 15
-        },
-        userPhoneFooter: {
-            required: true,
-            minlength: 7
-        },
-        // правило-объект (блок)
-        footerCheckbox: {
-            required: true
-        },
-        userQuestionFooter: "required"
+    $('.footer__form').validate({
+        errorClass: "invalid",
+        rules: {
+            // строчное правило {required:true}
+            userName: {
+                required: true,
+                minlength: 2,
+                maxlength: 15
+            },
+            userPhone: {
+                required: true,
+                minlength: 7
+            },
+            // правило-объект (блок)
+            footerCheckbox: {
+                required: true
+            },
+            userQuestion: "required"
 
-    }, // сообщения
-    messages: {
-        userNameFooter: {
-            required: "Имя обязательно",
-            minlength: "Врёшь, сволочь!",
-            maxlength: "Чувак, у тебя залипла клава!"
+        }, // сообщения
+        messages: {
+            userName: {
+                required: "Имя обязательно",
+                minlength: "Врёшь, сволочь!",
+                maxlength: "Чувак, у тебя залипла клава!"
+            },
+            userPhone: {
+                required: "Телефон обязателен. Всё обязательно!",
+                minlength: "Добавь циферек, жалко что ли ?",
+            },
+            userQuestion: {
+                required: "Хотел спросить - спрашивай!"
+            },
+            footerCheckbox: {
+                required: "Не тормози! Одна галочка решит все наши будущие проблемы!)",
+            },
         },
-        userPhoneFooter: {
-            required: "Телефон обязателен. Всё обязательно!",
-            minlength: "Добавь циферек, жалко что ли ?",
-        },
-        userQuestionFooter: {
-            required: "Хотел спросить - спрашивай!"
-        },
-        footerCheckbox: {
-            required:  "Не тормози! Одна галочка решит все наши будущие проблемы!)",
-        },
-    }
-});
+        //отправка формы через аякс
+        submitHandler: function (form) {
+            $.ajax({
+                type: "POST",
+                url: "sendFooter.php",
+                data: $(".footer__form").serialize(), //Преобразует данные формы в строку, пригодную для использования в URL
+                success: function (response) {
+                    //footer.on('.modalSend');
+                    $(form)[0].reset(); // чистит поля после отправки формы
+                    $('.modalSend').fadeIn();
+                }
+            });
+        }
+    });
 
 
     // маска для номера телефона
@@ -237,23 +264,24 @@ $('.footer__form').validate({
         placeholder: "Ваш номер телефона"
     });
 
-//Плеер
-var player;
-$('.video__play').on('click', function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '570',
-        width: '100%',
-        videoId: 'RAgUDsgKENg',
-        events: {
-            'onReady': videoPlay
-        }
+    //Плеер
+    var player;
+    $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '570',
+            width: '100%',
+            videoId: 'RAgUDsgKENg',
+            events: {
+                'onReady': videoPlay
+            }
+        });
+        $('.video__play').css('max-height', '31rem');
     });
-    $('.video__play').css('max-height', '31rem');
-});
-function videoPlay(event) {
-    event.target.playVideo();
-}
-//Создание карты
+
+    function videoPlay(event) {
+        event.target.playVideo();
+    }
+    //Создание карты
 
     // Функция ymaps.ready() будет вызвана, когда
     ymaps.ready(function () {
@@ -263,12 +291,12 @@ function videoPlay(event) {
             }, {
                 searchControlProvider: 'yandex#search'
             }),
-    
+
             // Создаём макет содержимого.
             MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
                 '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
             ),
-    
+
             myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
                 hintContent: 'Наш офис',
                 balloonContent: 'Курительные смеси и лёгкие наркотики. Всё для Вас!'
@@ -284,12 +312,10 @@ function videoPlay(event) {
                 // её "ножки" (точки привязки).
                 iconImageOffset: [-5, -38]
             });
-    
-        myMap.geoObjects
-            .add(myPlacemark);
+
+        myMap.geoObjects.add(myPlacemark);
+        myMap.behaviors.disable("scrollZoom");
 
     });
 
 });
-
-
