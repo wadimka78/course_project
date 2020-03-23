@@ -163,7 +163,7 @@ $('.control__form').validate({
         },
         userPhoneControl: {
             required: true,
-            minlength: 9
+            minlength: 8
         },
         controlCheckbox: {
             required: true
@@ -232,6 +232,9 @@ $('.footer__form').validate({
     // маска для номера телефона
     $('[type=tel]').mask('+7(000) 000-00-00', {
         placeholder: "+7 (__) ___-__-__"
+    });
+    $('[type=tel2]').mask('+7(000) 000-00-00', {
+        placeholder: "Ваш номер телефона"
     });
 
 //Плеер

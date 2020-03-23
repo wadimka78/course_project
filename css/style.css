@@ -1354,15 +1354,19 @@ img {
   padding-left: 10px;
 }
 
+.control__input-group input {
+  padding-top: 0;
+  margin-top: 0.5rem;
+  color: unset;
+}
+
+.control__input-group input.invalid {
+  color: tomato;
+}
+
 .control__input-group div.invalid {
   position: absolute;
   bottom: -20px;
-}
-
-.control__input-group input {
-  color: unset;
-  padding-top: 0;
-  margin-top: 0.5rem;
 }
 
 .control__label {
@@ -1626,6 +1630,7 @@ img {
 .modal__dialog {
   position: relative;
   max-width: 36.36rem;
+  max-height: 36.36rem;
   background: #131313 url("../img/bg-lines.png") no-repeat center;
   background-position-y: inherit;
   padding: 2.357rem 3.5rem 1.928rem;
@@ -1650,6 +1655,8 @@ img {
   text-align: center;
   margin: 0;
   margin-bottom: 2.428rem;
+  padding: 0px 50px;
+  line-height: 2.3rem;
 }
 
 .modal__form {
@@ -1675,20 +1682,24 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 3.482rem;
+  margin-bottom: 4.4rem;
+  margin-top: -0.3rem;
 }
 
-.modal__input:last-of-type {
-  margin-bottom: 1rem;
+.modal__input-group:last-of-type {
+  margin-top: -3rem;
 }
 
 .modal__policy {
-  margin-bottom: 2.7rem;
+  margin: -1.1rem auto 2.7rem 1.1rem;
 }
 
 .modal__button {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  padding: 1.428rem 4.428rem;
+  margin-top: -5rem;
+  margin-right: 2.142rem;
 }
 
 .projects {
