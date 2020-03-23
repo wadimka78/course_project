@@ -49,6 +49,9 @@
 @media screen and ( min-width: 768px)
     .fantazy
         display: none
+@media screen and ( min-width: 576px)
+    .show-mobile
+        display: none
 @media screen and ( max-width: 1199px  )
     html
         font-size: 12px
@@ -87,9 +90,6 @@
             padding-left: 0.5rem
             padding-right: 0.5rem
             width: 90%
-    .section
-        padding-left: 6%
-        padding-right: 6%
 @media screen and ( max-width: 767px )
     html
         font-size: 11px
@@ -136,11 +136,13 @@
             margin-bottom: 5rem
         &__section-title
             margin-top: -6rem
+        & .col-30
+            margin: 0
     .fantazy
         margin-top: -10rem
         margin-bottom: -16.5rem
     .design
-        background-color: $background-black
+        background-color: $dark
         color: $light
         &__subtitle
             color: $light
@@ -148,10 +150,12 @@
             margin-bottom: 5rem
         &__section-title
             padding-top: 11rem
+        & .col-30
+            margin: 0
     .our-team
         margin-top: 26rem
         margin-bottom: 7rem
-        background-color: $background-black
+        background-color: $dark
         & .control
             &__text
                 display: none
@@ -161,12 +165,30 @@
         display: none
     .card
         &__text
+            max-width: 100%
+            width: 71%
+            padding-left: 2rem
             margin-left: 0
+        &__title
+            color: $black
+        &__pricetag
+            width: 61%
     .section
-        padding-left: 7%
-        padding-right: 7%
         &.control
             //padding-top: 0
+    .footer
+        background-image: none
+        &__wrap
+            background-color: $dark
+        &__section-title--adress
+            color: $primary
+            margin-top: 2.2rem
+        &__map
+            width: 90%
+            margin: auto
+        &__map-wrap
+            display: flex
+            flex-direction: column-reverse
 @media screen and ( max-width: 575px )
     html
         font-size: 12px
@@ -199,16 +221,48 @@
             text-align: center
             margin-bottom: 1.85rem
             margin-right: auto
+        &__title
+            font-size: 1.943rem
+            line-height: 2.6rem
+            max-width: 100%
+    .instagram
+        display: none
+    .show-desctop
+        display: none
+    .projects
+        & .section-title
+            &__text
+                padding-top: 0.52rem
+                padding-bottom: 0.4rem
+        &__row
+            & .col-50:nth-child(1)
+                .swiper-wrapper
+                    padding-bottom: 5px   
     .types
         padding-left: 18px
         padding-right: 18px
         &__card
             margin-bottom: 5.7rem
+
+    .control 
+        & .section-title
+            &__heading 
+                font-size: 2.1rem
+                margin-bottom: 13px
+                margin-top: 4.2rem
+        &__video
+            min-height: unset
     .design
         padding-left: 18px
         padding-right: 18px
         &__card
             margin-bottom: 5.7rem
+        &__section-title
+            margin-bottom: 1.6rem
+        &__subtitle
+            max-width: 25rem
+            font-size: 1.23rem
+            line-height: 1.7rem
     .section-title
             margin-bottom: 3.3rem
             &__heading
@@ -217,13 +271,6 @@
                 width: 22.92rem
             &__word::after
                 content: none
-    .design
-        &__section-title
-            margin-bottom: 1.6rem
-        &__subtitle
-            max-width: 25rem
-            font-size: 1.23rem
-            line-height: 1.7rem
     .card
         &__text
             margin-top: -11.84rem
@@ -235,7 +282,6 @@
             line-height: 1.9rem
             padding-left: 1.75rem
         &__pricetag
-            width: 191px
             padding: 1rem
             bottom: -0.87rem
         .section
@@ -273,10 +319,5 @@
             margin-bottom: 2.25rem
             padding: 19px 28px
             letter-spacing: .11rem
-        &__title
-            font-size: 1.643rem
-            line-height: 2.4rem
-            max-width: 65%
-
     .button--outline
         letter-spacing: .075rem

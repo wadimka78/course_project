@@ -1811,6 +1811,12 @@ img {
   }
 }
 
+@media screen and (min-width: 576px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1199px) {
   html {
     font-size: 12px;
@@ -1848,10 +1854,6 @@ img {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 90%;
-  }
-  .section {
-    padding-left: 6%;
-    padding-right: 6%;
   }
 }
 
@@ -1919,12 +1921,15 @@ img {
   .types__section-title {
     margin-top: -6rem;
   }
+  .types .col-30 {
+    margin: 0;
+  }
   .fantazy {
     margin-top: -10rem;
     margin-bottom: -16.5rem;
   }
   .design {
-    background-color: #252525;
+    background-color: #131313;
     color: #fff;
   }
   .design__subtitle {
@@ -1936,10 +1941,13 @@ img {
   .design__section-title {
     padding-top: 11rem;
   }
+  .design .col-30 {
+    margin: 0;
+  }
   .our-team {
     margin-top: 26rem;
     margin-bottom: 7rem;
-    background-color: #252525;
+    background-color: #131313;
   }
   .our-team .control__text {
     display: none;
@@ -1951,11 +1959,39 @@ img {
     display: none;
   }
   .card__text {
+    max-width: 100%;
+    width: 71%;
+    padding-left: 2rem;
     margin-left: 0;
   }
-  .section {
-    padding-left: 7%;
-    padding-right: 7%;
+  .card__title {
+    color: #181818;
+  }
+  .card__pricetag {
+    width: 61%;
+  }
+  .footer {
+    background-image: none;
+  }
+  .footer__wrap {
+    background-color: #131313;
+  }
+  .footer__section-title--adress {
+    color: #E3B873;
+    margin-top: 2.2rem;
+  }
+  .footer__map {
+    width: 90%;
+    margin: auto;
+  }
+  .footer__map-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 }
 
@@ -1997,6 +2033,24 @@ img {
     margin-bottom: 1.85rem;
     margin-right: auto;
   }
+  .hero__title {
+    font-size: 1.943rem;
+    line-height: 2.6rem;
+    max-width: 100%;
+  }
+  .instagram {
+    display: none;
+  }
+  .show-desctop {
+    display: none;
+  }
+  .projects .section-title__text {
+    padding-top: 0.52rem;
+    padding-bottom: 0.4rem;
+  }
+  .projects__row .col-50:nth-child(1) .swiper-wrapper {
+    padding-bottom: 5px;
+  }
   .types {
     padding-left: 18px;
     padding-right: 18px;
@@ -2004,12 +2058,28 @@ img {
   .types__card {
     margin-bottom: 5.7rem;
   }
+  .control .section-title__heading {
+    font-size: 2.1rem;
+    margin-bottom: 13px;
+    margin-top: 4.2rem;
+  }
+  .control__video {
+    min-height: unset;
+  }
   .design {
     padding-left: 18px;
     padding-right: 18px;
   }
   .design__card {
     margin-bottom: 5.7rem;
+  }
+  .design__section-title {
+    margin-bottom: 1.6rem;
+  }
+  .design__subtitle {
+    max-width: 25rem;
+    font-size: 1.23rem;
+    line-height: 1.7rem;
   }
   .section-title {
     margin-bottom: 3.3rem;
@@ -2022,14 +2092,6 @@ img {
   }
   .section-title__word::after {
     content: none;
-  }
-  .design__section-title {
-    margin-bottom: 1.6rem;
-  }
-  .design__subtitle {
-    max-width: 25rem;
-    font-size: 1.23rem;
-    line-height: 1.7rem;
   }
   .card__text {
     margin-top: -11.84rem;
@@ -2044,7 +2106,6 @@ img {
     padding-left: 1.75rem;
   }
   .card__pricetag {
-    width: 191px;
     padding: 1rem;
     bottom: -0.87rem;
   }
@@ -2095,11 +2156,6 @@ img {
     margin-bottom: 2.25rem;
     padding: 19px 28px;
     letter-spacing: .11rem;
-  }
-  .hero__title {
-    font-size: 1.643rem;
-    line-height: 2.4rem;
-    max-width: 65%;
   }
   .button--outline {
     letter-spacing: .075rem;
