@@ -243,6 +243,15 @@
         padding-right: 18px
         &__card
             margin-bottom: 5.7rem
+        &__section-title
+            margin-top: -7rem
+            margin-bottom: 3.1rem
+        & .section-title
+            &__heading
+                letter-spacing: unset
+        & .card
+            &__text
+                padding-top: 1.6rem
 
     .control 
         & .section-title
@@ -251,18 +260,44 @@
                 margin-bottom: 13px
                 margin-top: 4.2rem
         &__video
-            min-height: unset
-    .design
-        padding-left: 18px
-        padding-right: 18px
-        &__card
-            margin-bottom: 5.7rem
+            min-height: 17.5rem
+            margin-bottom: 2.1rem
+            & img
+                max-width: 19%
+        &__text
+            font-size: 1.15rem
+            line-height: 2rem
+            margin-bottom: 3.4rem
+            &::before
+                margin-bottom: 1.2rem
+        &__input-group
+            flex-basis: 100%
+            font-size: 1.21rem
+            & input
+                font-size: 1.5rem
+                margin-top: 1rem
+            &:nth-child(1)
+                margin-top: -1.3rem
+            &:nth-child(2)
+                margin-top: 5.1rem
+                padding: 0
+        &__button
+            order: 2
+            margin-top: 5.2rem
+            width: 100%
+            font-size: 1.31rem
+        &__policy
+            order: 1
+            margin-top: 1rem
+            margin-left: -2.4rem
+    .fantazy
+        margin-top: -11.9rem
+        margin-bottom: -18rem
+        &__heading
+            letter-spacing: 0.01rem
         &__section-title
-            margin-bottom: 1.6rem
-        &__subtitle
-            max-width: 25rem
-            font-size: 1.23rem
-            line-height: 1.7rem
+            & img
+                padding-top: 1.2rem   
     .section-title
             margin-bottom: 3.3rem
             &__heading
@@ -271,6 +306,31 @@
                 width: 22.92rem
             &__word::after
                 content: none
+    .design
+        padding-left: 18px
+        padding-right: 18px
+        &__card
+            margin-bottom: 5.7rem
+            & ul li:nth-child(n+8)
+                display: none
+        &__section-title
+            margin-bottom: 1.6rem
+        & .section-title
+            &__heading
+                letter-spacing: -0.15rem
+                margin-top: -2.55rem
+                margin-bottom: 1.4rem
+                font-size: 2.06rem
+        & .card__pricetag
+            padding-right: 0
+            width: 65%
+        & .col-30:nth-last-child(2)
+            margin-top: 5px
+
+        &__subtitle
+            max-width: 25rem
+            font-size: 1.23rem
+            line-height: 1.7rem
     .card
         &__text
             margin-top: -11.84rem
@@ -283,10 +343,35 @@
             padding-left: 1.75rem
         &__pricetag
             padding: 1rem
-            bottom: -0.87rem
+            transform: translateY(5px)
         .section
             padding-left: 8%
             padding-right: 8%
+
+    .our-team
+        & .section-title
+            &__heading
+                letter-spacing: -0.15rem
+                margin-top: 1.4rem
+                margin-bottom: 0.9rem
+                font-size: 2.06rem
+        &__subtitle
+                width: 100%
+                font-size: 1.25rem
+                padding: 0
+                margin-bottom: 4.2rem
+        & .col-30
+            width: 100%
+            &::before    
+                width: 9rem
+                height: 9rem
+        & .card__text
+                width: 100%
+                max-width: 77%
+                transform: translateX(-5px)
+        &__card
+            margin-left: 2.9rem
+
 @media screen and ( max-height: 450px  )
     .hero
         &__scroll-down

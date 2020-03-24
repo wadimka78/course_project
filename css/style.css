@@ -4,7 +4,7 @@
   src: url("../fonts/futura/FuturaBookC.woff") format("woff"), url("../fonts/futura/FuturaBookC.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: wrap;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,7 +12,7 @@
   src: url("../fonts/futura/FuturaDemiC.woff") format("woff"), url("../fonts/futura/FuturaDemiC.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: wrap;
+  font-display: swap;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -2058,28 +2058,76 @@ img {
   .types__card {
     margin-bottom: 5.7rem;
   }
+  .types__section-title {
+    margin-top: -7rem;
+    margin-bottom: 3.1rem;
+  }
+  .types .section-title__heading {
+    letter-spacing: unset;
+  }
+  .types .card__text {
+    padding-top: 1.6rem;
+  }
   .control .section-title__heading {
     font-size: 2.1rem;
     margin-bottom: 13px;
     margin-top: 4.2rem;
   }
   .control__video {
-    min-height: unset;
+    min-height: 17.5rem;
+    margin-bottom: 2.1rem;
   }
-  .design {
-    padding-left: 18px;
-    padding-right: 18px;
+  .control__video img {
+    max-width: 19%;
   }
-  .design__card {
-    margin-bottom: 5.7rem;
+  .control__text {
+    font-size: 1.15rem;
+    line-height: 2rem;
+    margin-bottom: 3.4rem;
   }
-  .design__section-title {
-    margin-bottom: 1.6rem;
+  .control__text::before {
+    margin-bottom: 1.2rem;
   }
-  .design__subtitle {
-    max-width: 25rem;
-    font-size: 1.23rem;
-    line-height: 1.7rem;
+  .control__input-group {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    font-size: 1.21rem;
+  }
+  .control__input-group input {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .control__input-group:nth-child(1) {
+    margin-top: -1.3rem;
+  }
+  .control__input-group:nth-child(2) {
+    margin-top: 5.1rem;
+    padding: 0;
+  }
+  .control__button {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-top: 5.2rem;
+    width: 100%;
+    font-size: 1.31rem;
+  }
+  .control__policy {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-top: 1rem;
+    margin-left: -2.4rem;
+  }
+  .fantazy {
+    margin-top: -11.9rem;
+    margin-bottom: -18rem;
+  }
+  .fantazy__heading {
+    letter-spacing: 0.01rem;
+  }
+  .fantazy__section-title img {
+    padding-top: 1.2rem;
   }
   .section-title {
     margin-bottom: 3.3rem;
@@ -2092,6 +2140,37 @@ img {
   }
   .section-title__word::after {
     content: none;
+  }
+  .design {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .design__card {
+    margin-bottom: 5.7rem;
+  }
+  .design__card ul li:nth-child(n+8) {
+    display: none;
+  }
+  .design__section-title {
+    margin-bottom: 1.6rem;
+  }
+  .design .section-title__heading {
+    letter-spacing: -0.15rem;
+    margin-top: -2.55rem;
+    margin-bottom: 1.4rem;
+    font-size: 2.06rem;
+  }
+  .design .card__pricetag {
+    padding-right: 0;
+    width: 65%;
+  }
+  .design .col-30:nth-last-child(2) {
+    margin-top: 5px;
+  }
+  .design__subtitle {
+    max-width: 25rem;
+    font-size: 1.23rem;
+    line-height: 1.7rem;
   }
   .card__text {
     margin-top: -11.84rem;
@@ -2107,11 +2186,40 @@ img {
   }
   .card__pricetag {
     padding: 1rem;
-    bottom: -0.87rem;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
   }
   .card .section {
     padding-left: 8%;
     padding-right: 8%;
+  }
+  .our-team .section-title__heading {
+    letter-spacing: -0.15rem;
+    margin-top: 1.4rem;
+    margin-bottom: 0.9rem;
+    font-size: 2.06rem;
+  }
+  .our-team__subtitle {
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 0;
+    margin-bottom: 4.2rem;
+  }
+  .our-team .col-30 {
+    width: 100%;
+  }
+  .our-team .col-30::before {
+    width: 9rem;
+    height: 9rem;
+  }
+  .our-team .card__text {
+    width: 100%;
+    max-width: 77%;
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  .our-team__card {
+    margin-left: 2.9rem;
   }
 }
 
