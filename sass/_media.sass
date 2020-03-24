@@ -290,6 +290,9 @@
             order: 1
             margin-top: 1rem
             margin-left: -2.4rem
+            &-label
+                justify-content: left
+                margin-left: 2.5rem
     .fantazy
         margin-top: -11.9rem
         margin-bottom: -18rem
@@ -352,7 +355,7 @@
         & .section-title
             &__heading
                 letter-spacing: -0.15rem
-                margin-top: 1.4rem
+                margin-top: 0.4rem
                 margin-bottom: 0.9rem
                 font-size: 2.06rem
         &__subtitle
@@ -362,17 +365,75 @@
                 margin-bottom: 4.2rem
         & .col-30
             width: 100%
+            margin-bottom: 10rem
             &::before    
                 width: 9rem
                 height: 9rem
-        & .card__text
+                left: -20px
+        & .card
+            &__text
                 width: 100%
-                max-width: 77%
-                transform: translateX(-5px)
+                max-width: 234px
+                transform: translateX(-4px)
+                margin-left: auto
+                margin-right: auto
+            &__pricetag
+                width: 100%
+                max-width: 172px
+                left: 0
+                font-size: 1.1rem
         &__card
             margin-left: 2.9rem
+    .footer
+        &__title
+            letter-spacing: 2px
+            margin-top: -1.8rem
+        &__section-title--adress
+            font-size: 1.51rem
+            letter-spacing: .01rem
+            margin: 3.3rem auto 1.8rem auto
+        &__input
+            font-size: 1.5rem
+        &__input-group
+            margin-left: -1rem
+            font-size: 1.21rem
+        &__input-group:nth-child(1)
+            flex-basis: 100%
+            margin-top: 1.5rem
+        &__input-group:nth-child(2)
+            margin-top: 2rem
+        &__input-group:nth-child(3)
+            margin-top: 1.4rem
+        &__policy
+            margin-top: -1.6rem
+            margin-left: -3.4rem
+        & .policy
+            &__label--center 
+                justify-content: left
+                margin-left: 2.5rem
 
-@media screen and ( max-height: 450px  )
+        &__button
+            padding: 1.45rem
+            width: 100%
+            margin-top: 1.8rem
+            font-size: 1.3rem
+        &__icons span img
+            width: 38px
+            height: 38px
+        &__map-wrap
+            margin-top: -2.3rem
+        &__map     
+            min-height: 250px
+        & .form
+            &__label
+                font-size: unset
+        & .input
+            border-bottom: solid rgba(54, 54, 54, 0.3)
+        & .policy
+            &__label
+                font-size: 1.3rem       
+            
+@media screen and ( max-height: 500px  )
     .hero
         &__scroll-down
             display: none

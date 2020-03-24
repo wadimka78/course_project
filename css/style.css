@@ -2119,6 +2119,12 @@ img {
     margin-top: 1rem;
     margin-left: -2.4rem;
   }
+  .control__policy-label {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    margin-left: 2.5rem;
+  }
   .fantazy {
     margin-top: -11.9rem;
     margin-bottom: -18rem;
@@ -2195,7 +2201,7 @@ img {
   }
   .our-team .section-title__heading {
     letter-spacing: -0.15rem;
-    margin-top: 1.4rem;
+    margin-top: 0.4rem;
     margin-bottom: 0.9rem;
     font-size: 2.06rem;
   }
@@ -2207,23 +2213,95 @@ img {
   }
   .our-team .col-30 {
     width: 100%;
+    margin-bottom: 10rem;
   }
   .our-team .col-30::before {
     width: 9rem;
     height: 9rem;
+    left: -20px;
   }
   .our-team .card__text {
     width: 100%;
-    max-width: 77%;
-    -webkit-transform: translateX(-5px);
-            transform: translateX(-5px);
+    max-width: 234px;
+    -webkit-transform: translateX(-4px);
+            transform: translateX(-4px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .our-team .card__pricetag {
+    width: 100%;
+    max-width: 172px;
+    left: 0;
+    font-size: 1.1rem;
   }
   .our-team__card {
     margin-left: 2.9rem;
   }
+  .footer__title {
+    letter-spacing: 2px;
+    margin-top: -1.8rem;
+  }
+  .footer__section-title--adress {
+    font-size: 1.51rem;
+    letter-spacing: .01rem;
+    margin: 3.3rem auto 1.8rem auto;
+  }
+  .footer__input {
+    font-size: 1.5rem;
+  }
+  .footer__input-group {
+    margin-left: -1rem;
+    font-size: 1.21rem;
+  }
+  .footer__input-group:nth-child(1) {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 1.5rem;
+  }
+  .footer__input-group:nth-child(2) {
+    margin-top: 2rem;
+  }
+  .footer__input-group:nth-child(3) {
+    margin-top: 1.4rem;
+  }
+  .footer__policy {
+    margin-top: -1.6rem;
+    margin-left: -3.4rem;
+  }
+  .footer .policy__label--center {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    margin-left: 2.5rem;
+  }
+  .footer__button {
+    padding: 1.45rem;
+    width: 100%;
+    margin-top: 1.8rem;
+    font-size: 1.3rem;
+  }
+  .footer__icons span img {
+    width: 38px;
+    height: 38px;
+  }
+  .footer__map-wrap {
+    margin-top: -2.3rem;
+  }
+  .footer__map {
+    min-height: 250px;
+  }
+  .footer .form__label {
+    font-size: unset;
+  }
+  .footer .input {
+    border-bottom: solid rgba(54, 54, 54, 0.3);
+  }
+  .footer .policy__label {
+    font-size: 1.3rem;
+  }
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 500px) {
   .hero__scroll-down {
     display: none;
   }

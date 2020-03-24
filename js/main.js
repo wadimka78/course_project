@@ -1,4 +1,18 @@
+
+
+const map = document.querySelector(".map");
+map.setAttribute("style", "display: none"), window.addEventListener("scroll", function () {
+    (window.pageYOffset || document.documentElement.scrollTop) > 3700 ? map.setAttribute("style", "display: block") : map.setAttribute("style", "display: none")
+}), [].forEach.call(document.querySelectorAll("img[data-src]"), function (e) {
+    e.setAttribute("src", e.getAttribute("data-src")), e.onload = function () {
+        e.removeAttribute("data-src")
+    }
+}),
+
+
+
 document.addEventListener("DOMContentLoaded", function (event) {
+
     var modal = $('.modal');
     $(document).ready(function () {
         var modal = $('.modal'),
