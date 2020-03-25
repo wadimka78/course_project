@@ -1124,6 +1124,10 @@ img {
   margin-bottom: 12px;
 }
 
+.six-steps .slider-titles__block:hover {
+  cursor: pointer;
+}
+
 .highlightedNumber {
   color: red;
   background: green;
@@ -1219,11 +1223,21 @@ img {
 
 .footer__map {
   margin-bottom: 4rem;
-  min-height: 465px;
-  max-width: 66.07rem;
   margin: 2.8rem auto 4.8rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
+}
+
+.footer__google {
+  min-height: 465px;
+  width: 100%;
+  max-width: 66.07rem;
 }
 
 .footer__section-title--adress {
@@ -1708,6 +1722,68 @@ img {
   bottom: -18px;
 }
 
+.thanks {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 30rempx;
+  max-height: 25rempx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.thanks__wrap {
+  position: relative;
+  max-width: 80vw;
+  width: 500px;
+  max-height: 60vh;
+  height: 300px;
+  background: url(../img/bg-lines.png) #a9ab26 no-repeat center;
+  color: #441d17;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.7rem;
+}
+
+.thanks__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent url(../img/close1.png) center no-repeat;
+  background-size: cover;
+  border: none;
+  margin: .9rem;
+  margin-top: .7rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.thanks--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 .projects {
   padding-bottom: 23.8rem;
 }
@@ -1857,6 +1933,12 @@ img {
   }
 }
 
+@media screen and (max-width: 880px) {
+  .footer__map {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 767px) {
   html {
     font-size: 11px;
@@ -1980,10 +2062,6 @@ img {
     color: #E3B873;
     margin-top: 2.2rem;
   }
-  .footer__map {
-    width: 90%;
-    margin: auto;
-  }
   .footer__map-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1992,6 +2070,9 @@ img {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+  }
+  .footer__map {
+    margin: auto;
   }
 }
 
@@ -2288,6 +2369,9 @@ img {
     margin-top: -2.3rem;
   }
   .footer__map {
+    max-height: 250px;
+  }
+  .footer__google {
     min-height: 250px;
   }
   .footer .form__label {
@@ -2324,6 +2408,7 @@ img {
   }
   .hero {
     padding-top: 19px;
+    height: 100vh;
   }
   .hero__content {
     max-width: 100%;

@@ -5,23 +5,42 @@ map.setAttribute("style", "display: none"), window.addEventListener("scroll", fu
     e.setAttribute("src", e.getAttribute("data-src")), e.onload = function () {
         e.removeAttribute("data-src")
     }
-}),
+}), 
+
 
 $(document).ready(function () {
-    var e = $(".modalka"),
-        o = $('[data-toggle="modalka"]');
-    closelkaBtn = $(".modalka__close"), o.on("click", function () {
-        e.toggleClass("modalka--visible")
-    }), closelkaBtn.on("click", function () {
-        e.toggleClass("modalka--visible")
+
+    var window = $(".modalka"),
+    windowBtn = $('[data-toggle="modalka"]');
+    closeWindowBtn = $(".modalka__close"),
+
+    
+    windowBtn.on("click", function () {
+            window.toggleClass("modalka--visible")
+    }), 
+
+    closelkaBtn.on("click", function () {
+        window.toggleClass("modalka--visible")
     });
-    var r = $(".modal"),
-        a = $('[data-toggle="modal"]');
-    closeBtn = $(".modal__close"), a.on("click", function () {
-        r.toggleClass("modal--visible")
-    }), closeBtn.on("click", function () {
-        r.toggleClass("modal--visible")
+
+
+    var o = $(".modal"),
+        l = $('[data-toggle="modal"]');
+
+
+    closeBtn = $(".modal__close"), l.on("click", function () {
+        o.toggleClass("modal--visible")
+    }), 
+    
+    
+    closeBtn.on("click", function () {
+        o.toggleClass("modal--visible")
     });
+
+
+
+
+
     new Swiper(".swiper-container", {
         loop: !0,
         pagination: {
@@ -33,10 +52,10 @@ $(document).ready(function () {
             prevEl: ".swiper-button-prev"
         }
     });
-    var t = $(".swiper-button-next"),
-        l = $(".swiper-button-prev"),
+    var a = $(".swiper-button-next"),
+        t = $(".swiper-button-prev"),
         i = $(".swiper-pagination");
-    t.css("left", l.width() + 10 + i.width() + 10), i.css("left", l.width() + 10), $(".modal__form").validate({
+    a.css("left", t.width() + 10 + i.width() + 10), i.css("left", t.width() + 10), $(".modal__form").validate({
         errorElement: "em",
         errorClass: "invalid",
         rules: {
@@ -63,20 +82,29 @@ $(document).ready(function () {
                 email: "Введите в формате name@domain.com"
             }
         },
-        submitHandler: function (o) {
+
+
+
+        submitHandler: function (r) {
             $.ajax({
                 type: "POST",
                 url: "send.php",
-                data: $(o).serialize(),
-                success: function (a) {
-                    $(o)[0].reset(), e.toggleClass("modalka--visible"), r.removeClass("modal--visible")
+                data: $(r).serialize(),
+                success: function (l) {
+                    return $(r)[0].reset(), 
+                    o.removeClass("modal--visible"), 
+                    e.toggleClass("modalka--visible"), 
+                    ym(61256533, "reachGoal", "form"), !0
                 },
                 error: function (e) {
                     console.error("Ошибка запроса " + e)
                 }
             })
         }
-    }), $(".control__form").validate({
+    }),
+    
+    
+    $(".control__form").validate({
         errorElement: "em",
         errorClass: "invalid",
         rules: {
@@ -103,13 +131,17 @@ $(document).ready(function () {
             },
             userCheckbox: "Обработка обязательна"
         },
-        submitHandler: function (o) {
+
+        submitHandler: function (r) {
             $.ajax({
                 type: "POST",
                 url: "send.php",
-                data: $(o).serialize(),
-                success: function (a) {
-                    $(o)[0].reset(), e.toggleClass("modalka--visible"), r.removeClass("modal--visible")
+                data: $(r).serialize(),
+                success: function (l) {
+                    return $(r)[0].reset(),
+                     e.toggleClass("modalka--visible"),
+                      o.removeClass("modal--visible"), 
+                      ym(61256533, "reachGoal", "form"), !0
                 },
                 error: function (e) {
                     console.error("Ошибка запроса " + e)
@@ -147,36 +179,19 @@ $(document).ready(function () {
             },
             footerCheckbox: "Обработка обязательна"
         },
-        submitHandler: function (o) {
+        submitHandler: function (r) {
             $.ajax({
                 type: "POST",
                 url: "send.php",
-                data: $(o).serialize(),
-                success: function (a) {
-                    $(o)[0].reset(), e.toggleClass("modalka--visible"), r.removeClass("modal--visible")
+                data: $(r).serialize(),
+                success: function (l) {
+                    return $(r)[0].reset(), e.toggleClass("modalka--visible"), o.removeClass("modal--visible"), ym(61256533, "reachGoal", "question"), !0
                 },
                 error: function (e) {
                     console.error("Ошибка запроса " + e)
                 }
             })
         }
-    }), ymaps.ready(function () {
-        var e = new ymaps.Map("map", {
-                center: [54.713681, 55.993384],
-                zoom: 9
-            }, {
-                searchControlProvider: "yandex#search"
-            }),
-            o = (ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'), new ymaps.Placemark(e.getCenter(), {
-                hintContent: "Наш офис",
-                balloonContent: "Вход со двора"
-            }, {
-                iconLayout: "default#image",
-                iconImageHref: "img/location.png",
-                iconImageSize: [32, 32],
-                iconImageOffset: [-5, -38]
-            }));
-        e.geoObjects.add(o)
     }), $("[type=tel]").mask("+7(000) 000-00-00", {
         placeholder: "+7 (___) __-__-___"
     })

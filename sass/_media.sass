@@ -90,6 +90,11 @@
             padding-left: 0.5rem
             padding-right: 0.5rem
             width: 90%
+
+@media screen and ( max-width: 880px )
+    .footer
+        &__map
+            width: 90%
 @media screen and ( max-width: 767px )
     html
         font-size: 11px
@@ -183,12 +188,11 @@
         &__section-title--adress
             color: $primary
             margin-top: 2.2rem
-        &__map
-            width: 90%
-            margin: auto
         &__map-wrap
             display: flex
             flex-direction: column-reverse
+        &__map
+            margin: auto
 @media screen and ( max-width: 575px )
     html
         font-size: 12px
@@ -423,6 +427,8 @@
         &__map-wrap
             margin-top: -2.3rem
         &__map     
+            max-height: 250px
+        &__google
             min-height: 250px
         & .form
             &__label
@@ -450,6 +456,7 @@
         letter-spacing: -0.3px
     .hero
         padding-top: 19px
+        height: 100vh
         &__content
             max-width: 100%
             margin: 0px 1.46rem

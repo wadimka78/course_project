@@ -39,14 +39,3 @@ try {
 } catch (Exception $e) {
     echo "Опа! Что-то пошло не так!. Код ошибки: {$mail->ErrorInfo}";
 }
-
-
-    //if ($mail->send()) {
-    // echo  "Зашибись!";  header('location: thanks.html')
-   // } else {
-     //   echo "Ничего не ушло, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
-   // }
-    
-//} catch (Exception $e) {
- //   echo "Письмо не отправлено, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
-//}

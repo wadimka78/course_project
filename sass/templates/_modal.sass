@@ -67,3 +67,48 @@
         margin-right: 2.142rem
     & div.invalid 
         bottom: -18px
+
+    //Окно благодарности
+
+.thanks 
+    visibility: hidden
+    position: fixed
+    z-index: 1999
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    max-width: 30rempx
+    max-height: 25rempx
+    display: flex
+    align-items: center
+    justify-content: center
+    &__wrap 
+        position: relative
+        max-width: 80vw
+        width: 500px
+        max-height: 60vh
+        height: 300px
+        background:  url(../img/bg-lines.png)  #a9ab26 no-repeat center
+        color: #441d17
+        text-align: center
+        justify-content: center
+        align-items: center
+        display: flex
+        font-size: 1.7rem
+    &__close 
+        position: absolute
+        right: 0
+        top: 0
+        width: 40px
+        height: 40px
+        background: transparent url(../img/close1.png) center no-repeat
+        background-size: cover
+        border: none
+        margin: .9rem
+        margin-top: .7rem
+        margin-right: 1rem
+        cursor: pointer
+
+.thanks--visible 
+    opacity: 1
+    visibility: visible

@@ -1,88 +1,72 @@
-$(document).ready(function () {
-    var modal = $('.modal'),
-        modalBtn = $('[data-toggle=modal]'),
-        closeBtn = $('.modal__close'),
-        window = $('.thanks'),
-        windowBtn = $('[data-toggle=thanks]'),
-        closeWindowBtn = $('.thanks__close');
+document.addEventListener("DOMContentLoaded", function (event) {
+
+    var modal = $('.modal');
+    $(document).ready(function () {
+        var modal = $('.modal'),
+            modalBtn = $('[data-toggle=modal]');
+        closeBtn = $('.modal__close');
 
         modalBtn.on('click', function () {
             modal.toggleClass('modal--visible');
         });
-
-    closeBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
-    });
-
-    //Окно благодарности
-
-        windowBtn.on('click', function () {
-            window.toggleClass('thanks--visible');
+        closeBtn.on('click', function () {
+            modal.toggleClass('modal--visible');
         });
 
-    closeWindowBtn.on('click', function () {
-        window.toggleClass('thanks--visible');
+        /*Закрытие по фону*/
+
+        $(document).click(function (e) {
+            if ($(e.target).is('.modal')) {
+                modal.toggleClass('modal--visible');
+            }
+        });
+
+        /*Закрытие по кнопке*/
+
+        $(document).keydown(function (e) {
+            if (e.keyCode === 27) {
+                modal.toggleClass('modal--visible');
+            }
+        });
+
+        /*Кнопка прокрутки*/
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 100) {
+                $('#scroll_top').show();
+            } else {
+                $('#scroll_top').hide();
+            }
+        });
+
+        $('#scroll_top').click(function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
+
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+
+        var nextBtn = $('.swiper-button-next');
+        var prevtBtn = $('.swiper-button-prev');
+        var bullets = $('.swiper-pagination');
+
+        nextBtn.css('left', prevtBtn.width() + 20 + bullets.width() + 20)
+        bullets.css('left', prevtBtn.width() + 20)
+
+        new WOW().init();
     });
-
-
-
-    /*Закрытие по фону*/
-
-    $(document).click(function (e) {
-        if ($(e.target).is('.modal')) {
-            modal.toggleClass('modal--visible');
-        }
-    });
-
-    /*Закрытие по кнопке*/
-
-    $(document).keydown(function (e) {
-        if (e.keyCode === 27) {
-            modal.toggleClass('modal--visible');
-        }
-    });
-
-    /*Кнопка прокрутки*/
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 100) {
-            $('#scroll_top').show();
-        } else {
-            $('#scroll_top').hide();
-        }
-    });
-
-    $('#scroll_top').click(function () {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 600);
-        return false;
-    });
-
-
-    var mySwiper = new Swiper('.swiper-container', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-
-
-    var nextBtn = $('.swiper-button-next');
-    var prevtBtn = $('.swiper-button-prev');
-    var bullets = $('.swiper-pagination');
-
-    nextBtn.css('left', prevtBtn.width() + 20 + bullets.width() + 20)
-    bullets.css('left', prevtBtn.width() + 20)
-
-    new WOW({
-        mobile: false
-    }).init();
-
 
     //*Анимация
 
@@ -107,6 +91,17 @@ $(document).ready(function () {
             });
         }
     }
+    //*отслеживание элемента (не работает !??!)
+    /*      $(window).scroll(function(){
+            var wt = $(window).scrollTop();
+            var wh = $(window).height();
+            var et = $('.move').offset().top;
+            var eh = $('.move').outerHeight();
+            var dh = $(document).height();   
+            if (wt + wh >= et || wh + wt == dh || eh + et < wh){
+                console.log('Элемент показан');
+            }
+        }); */
 
     // Валидация формы
 
@@ -139,18 +134,18 @@ $(document).ready(function () {
             userName: {
                 required: "Имя обязательно",
                 minlength: "Врёшь, сволочь!",
-                maxlength: "Чувак, у тебя залипла клава!"
+                maxlength: "Чувак, у тебя залипла клава!",
             },
             userPhone: {
                 required: "Тэляфон тожэ обызатэлэн!!!",
-                minlength: "Добавь циферек, жалко что ли ?"
+                minlength: "Добавь циферек, жалко что ли ?",
             },
             userEmail: {
                 required: "Заполните поле",
-                email: "Введите что-то типа name@domain.ru"
+                email: "Введите корректный email",
             },
             policyCheckbox: {
-                required: "Поставь галку, редиска!"
+                required: "Поставь галку, редиска!",
             }
         },
         submitHandler: function (form) {
@@ -159,10 +154,10 @@ $(document).ready(function () {
                 url: "send.php",
                 data: $(form).serialize(),
                 success: function (response) {
+                    alert('Форма отправлена, ждите санитаров');
                     console.log(modal);
                     $(form)[0].reset();
                     modal.removeClass('modal--visible');
-                    window.toggleClass('thanks--visible');
                 }
             });
         }
@@ -191,11 +186,11 @@ $(document).ready(function () {
             userName: {
                 required: "Имя обязательно",
                 minlength: "Врёшь, сволочь!",
-                maxlength: "Чувак, у тебя залипла клава!"
+                maxlength: "Чувак, у тебя залипла клава!",
             },
             userPhone: {
                 required: "Телефон обязателен. Всё обязательно!",
-                minlength: "Добавь циферек, жалко что ли ?"
+                minlength: "Добавь циферек, жалко что ли ?",
             },
             controlCheckbox: {
                 required: "Ничё не забыл?"
@@ -207,10 +202,8 @@ $(document).ready(function () {
                 url: "send.php",
                 data: $(form).serialize(),
                 success: function (response) {
-                    // alert('Трансляция платная! Переведите 350wmz на мой WMZ-кошелек');
+                    alert('Трансляция платная! Переведите 350wmz на мой WMZ-кошелек');
                     $(form)[0].reset();
-                    modal.removeClass('modal--visible');
-                    window.toggleClass('thanks--visible');
                 }
             });
         }
@@ -244,14 +237,14 @@ $(document).ready(function () {
             userName: {
                 required: "Имя обязательно",
                 minlength: "Врёшь, сволочь!",
-                maxlength: "Чувак, у тебя залипла клава!"
+                maxlength: "Чувак, у тебя залипла клава!",
             },
             userPhone: {
                 required: "Телефон обязателен. Всё обязательно!",
                 minlength: "Добавь циферек, жалко что ли ?",
             },
             userQuestion: {
-                required: "Хотел спросить - спрашивай!"
+                required: "Хотел спросить - спрашивай!",
             },
             footerCheckbox: {
                 required: "Не тормози! Одна галочка решит все наши будущие проблемы!)",
@@ -263,10 +256,8 @@ $(document).ready(function () {
                 url: "send.php",
                 data: $(form).serialize(),
                 success: function (response) {
-                    //  alert('За спрос денег не берут! Но для тебя сделаем исключение))');
+                    alert('За спрос денег не берут! Но для тебя сделаем исключение))');
                     $(form)[0].reset();
-                    modal.removeClass('modal--visible');
-                    window.toggleClass('thanks--visible');
                 }
             });
         }
@@ -298,25 +289,9 @@ $(document).ready(function () {
     function videoPlay(event) {
         event.target.playVideo();
     }
+    //Создание карты
 
-    //Карта яндекса
+    //myMap.geoObjects.add(myPlacemark);
+   // myMap.behaviors.disable("scrollZoom");
 
-    var design = $('.design');
-    var designTop = design.offset().top;
-    $(window).bind('scroll', function () {
-        var windowTop = $(this).scrollTop();
-        if (windowTop > designTop) {
-            $('#map').html('<script src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac8349320c5b8696fc833ab8e2145acf66c38daf3cbcff8715af920d84c4c320c&amp;width=900&amp;height=465&amp;lang=ru_RU&amp;scroll=false"></script>')
-            $(window).unbind('scroll')
-        }
-    });
-
-    //Ленивая загрузка изображений
-
-    [].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
-        img.setAttribute('src', img.getAttribute('data-src'));
-        img.onload = function () {
-            img.removeAttribute('data-src');
-        };
-    });
 });
