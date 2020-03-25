@@ -5,28 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Yeseva+One&display=swap&subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+<!--  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> -->
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/animate.css">
     <link rel="stylesheet" href="./css/style.min.css">
     <title>Курсовой проект</title>
 </head>
 
 <body>
+
+<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym"); ym(61332526, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/61332526" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+
     <header class="header">
         <div class="container">
             <div class="menu">
-                <div class="logo menu__logo wow fadeInLeft">Repair Design Project</div>
-                <nav class="nav menu__nav">
-                    <a href="#" class="nav__item">Главная</a>
-                    <a href="#" class="nav__item">Проекты</a>
-                    <a href="#" class="nav__item">Замер</a>
-                    <a href="#" class="nav__item">Команда</a>
-                    <a href="#" class="nav__item">Отзывы</a>
-                    <a href="#" class="nav__item">Контакты</a>
+                <div class="logo menu__logo wow fadeInLeft"><a href="#"> Repair Design Project</a></div>
+                <nav class="nav menu__nav" id="top-menu">
+                    <a href="#home-page" class="nav__item">Главная</a>
+                    <a href="#projects" class="nav__item">Проекты</a>
+                    <a href="#control" class="nav__item">Замер</a>
+                    <a href="#team" class="nav__item">Команда</a>
+                    <a href="#review" class="nav__item">Отзывы</a>
+                    <a href="#contacts" class="nav__item">Контакты</a>
                 </nav>
                 <div class="contacts menu__contacts">
                     <a href="tel:+79993153578" class="phone contacts__phone">+7 (499) 315-35-78</a>
-                    <button class="button contacts__button button--primary" data-toggle="modal">
+                    <button  onclick="ym(61332526,'reachGoal','button'); return true;" class="button contacts__button button--primary" data-toggle="modal">
                         Заказать звонок
                     </button>
                 </div>
@@ -39,19 +44,19 @@
 
     <main>
         <section class="hero">
-            <div class="instagram hero__instagram">
+            <div class="instagram hero__instagram" id="home-page">
                 <a href="#" class="instagram__link">Instagram</a>
             </div>
             <div class="container">
                 <div class="hero__content">
                     <h1 class="title hero__title wow fadeInRight" data-wow-delay="0.1s">турецкий ремонт в&nbsp;<span
-                            class="title--primary">Ростове-на-дону</span></h1>
+                            class="title--primary">Ростове&#8209;на&#8209;дону</span></h1>
                     <p class="hero__text  wow fadeInRight" data-wow-delay="0.3s">Получите готовый ремонт под ключ в срок
                         с экономией рабочего времени до 45
                         дней и 20% от стоимости материалов за счет организации работы</p>
                     <button class="button hero__button button--primary  wow fadeInRight"   data-wow-delay="2s" data-toggle="modal">Рассчитать стоимость
                     </button>
-                    <button class="button hero__button button--outline  wow fadeInRight" data-wow-delay="2.5s" data-toggle="modal"> Отправить заявку</button>
+                    <button onclick="ym(61332526,'reachGoal','button'); return true;" class="button hero__button button--outline  wow fadeInRight" data-wow-delay="2.5s" data-toggle="modal"> Отправить заявку</button>
                 </div>
                 <!-- /.hero__content -->
             </div>
@@ -61,9 +66,9 @@
         <!-- /.hero -->
 
 
-        <section class="section section--dark projects">
+        <section class="section section--dark projects" id="projects">
             <div class="container">
-                <div class="row projects__row">
+                <div class="row projects__row ">
                     <div class="col-50 wow">
                         <div class="section-title section-title--left">
                             <h2 class="section-title__heading section-title__heading--primary">Завершенные <span
@@ -208,7 +213,8 @@
                     <!-- section-title__image -->
                 </div>
                 <!-- section-title -->
-                <div class="control__video video wow">
+                <div class="control__video video wow" id="player">
+                    <script src = "https://www.youtube.com/iframe_api"></script>
                     <img src="img/play_btn.svg" alt="play icon" class="video__play">
                 </div>
                 <!-- /.control__video video -->
@@ -256,7 +262,7 @@
 
 
 
-        <section class="section types">
+        <section class="section types" id="types">
             <div class="container">
                 <div class="section-title types__section-title wow fadeInUp">
                     <h2 class="section-title__heading ">Виды ремонта</h2>
@@ -388,7 +394,7 @@
 
 
 
-        <section class="section design">
+        <section class="section design" id="design">
             <div class="container">
                 <div class="wow fadeInUp">
                     <div class="section-title design__section-title">
@@ -542,7 +548,7 @@
                                 <!-- Slides -->
                                 <div class="swiper-slide swiper-no-swiping">
 
-                                    <div class="swiper-slide__text">
+                                    <div class="swiper-slide__text" id="control">
                                         <h3 class="swiper-slide__number">1/6</h3>
                                         <h3 class="swiper-slide__heading">Выезд на замеры помещения</h3>
                                         <p class="section-title__text">После вашего звонка мы идем к вам, чтобы
@@ -736,7 +742,7 @@
        
 
 
-        <section class="section our-team">
+        <section class="section our-team" id="team">
             <div class="container">
                 <div class="wow fadeInUp">
                     <div class="section-title our-team__section-title">
@@ -814,7 +820,7 @@
                 </div>
                 <!-- /.wow -->
 
-                <p class="control__text anime">
+                <p class="control__text anime" id="review">
                     Каждый сотрудник нашей компании является квалифицированным штатным специалистом с опытом работы от 6
                     лет. У нас нет гастарбайтеров, каждый сотрудник выполняет работу, соответствующую его специальности.
                 </p>
@@ -1014,7 +1020,7 @@
             </div>
             <!-- /.footer-wrap -->
 
-            <div class="footer__map-wrap">
+            <div class="footer__map-wrap" id="contacts">
                 <div class="footer__map-wrap--title">
                     <h2 class="section-title__heading footer__section-title--adress show-desctop">Ростов на дону, Торговый центр
                         Plaza
@@ -1025,8 +1031,8 @@
                         <span class="footer__section-title--phone">+7 (999) 768 32 99</span>
                     </h2>
                     <div class="footer__icons">
-                        <span><img src="img/foot3.png" alt="иконка почты"></span>
-                        <span><img src="img/foot4.png" alt="иконка инстаграма"></span>
+                        <span><a href="http://www.fishki.lv/03.html"><img src="img/foot3.png" alt="иконка почты"></a></span>
+                        <span><a href="https://www.instagram.com/buzova86/"><img src="img/foot4.png" alt="иконка инстаграма"></a></span>
                     </div>
                 </div>
                 <!-- /.map-wrap__title -->
@@ -1134,16 +1140,11 @@
     
     <a href="#" id="scroll_top" title="Крутим вверх"></a>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-
-
-
-
-<!--   <script src="https://api-maps.yandex.ru/2.1/?apikey=08538ffd-cd25-439d-ab8e-25489e1152d7&lang=ru_RU" type="text/javascript"> </script> -->
+    <script src="js/swiper.min.js"></script>
 
 
     <script src="js/wow.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
  <!--    <script src="js/jquery.validate.js"></script> -->
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/main.js"></script>

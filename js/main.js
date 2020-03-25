@@ -1,14 +1,14 @@
 $(document).ready(function () {
     var modal = $('.modal'),
         modalBtn = $('[data-toggle=modal]'),
-        closeBtn = $('.modal__close'),
-        window = $('.thanks'),
-        windowBtn = $('[data-toggle=thanks]'),
-        closeWindowBtn = $('.thanks__close');
+        closeBtn = $('.modal__close');
+    fenetre = $('.thanks'),
+        fenetreBtn = $('[data-toggle=thanks]'),
+        closeFenetreBtn = $('.thanks__close');
 
-        modalBtn.on('click', function () {
-            modal.toggleClass('modal--visible');
-        });
+    modalBtn.on('click', function () {
+        modal.toggleClass('modal--visible');
+    });
 
     closeBtn.on('click', function () {
         modal.toggleClass('modal--visible');
@@ -16,12 +16,12 @@ $(document).ready(function () {
 
     //Окно благодарности
 
-        windowBtn.on('click', function () {
-            window.toggleClass('thanks--visible');
-        });
+    fenetreBtn.on('click', function () {
+        fenetre.toggleClass('thanks--visible');
+    });
 
-    closeWindowBtn.on('click', function () {
-        window.toggleClass('thanks--visible');
+    closeFenetreBtn.on('click', function () {
+        fenetre.toggleClass('thanks--visible');
     });
 
 
@@ -162,7 +162,7 @@ $(document).ready(function () {
                     console.log(modal);
                     $(form)[0].reset();
                     modal.removeClass('modal--visible');
-                    window.toggleClass('thanks--visible');
+                    fenetre.toggleClass('thanks--visible');
                 }
             });
         }
@@ -207,10 +207,9 @@ $(document).ready(function () {
                 url: "send.php",
                 data: $(form).serialize(),
                 success: function (response) {
-                    // alert('Трансляция платная! Переведите 350wmz на мой WMZ-кошелек');
                     $(form)[0].reset();
                     modal.removeClass('modal--visible');
-                    window.toggleClass('thanks--visible');
+                    fenetre.toggleClass('thanks--visible');
                 }
             });
         }
@@ -254,7 +253,7 @@ $(document).ready(function () {
                 required: "Хотел спросить - спрашивай!"
             },
             footerCheckbox: {
-                required: "Не тормози! Одна галочка решит все наши будущие проблемы!)",
+                required: "Не забудь поставить галочку!)",
             }
         },
         submitHandler: function (form) {
@@ -263,10 +262,9 @@ $(document).ready(function () {
                 url: "send.php",
                 data: $(form).serialize(),
                 success: function (response) {
-                    //  alert('За спрос денег не берут! Но для тебя сделаем исключение))');
                     $(form)[0].reset();
                     modal.removeClass('modal--visible');
-                    window.toggleClass('thanks--visible');
+                    fenetre.toggleClass('thanks--visible');
                 }
             });
         }
@@ -285,14 +283,14 @@ $(document).ready(function () {
     var player;
     $('.video__play').on('click', function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-            height: '570',
+            height: '540',
             width: '100%',
-            videoId: 'RAgUDsgKENg',
+            videoId: 'Yq4KA0mUnC8',
             events: {
                 'onReady': videoPlay
             }
         });
-        $('.video__play').css('max-height', '31rem');
+        //   $('.video__play').css('max-height', '31rem');
     });
 
     function videoPlay(event) {
@@ -319,4 +317,39 @@ $(document).ready(function () {
             img.removeAttribute('data-src');
         };
     });
+
+    //Плавный скролинг по якорным ссылкам
+    // $(document).ready(function(){
+    //   $("#top-menu").on("click","a", function (event) {
+    //     event.preventDefault();
+    //    var id  = $(this).attr('href'),
+    //        top = $(id).offset().top;
+    //   $('body,html').animate({scrollTop: top}, 500);
+    // });
+    // });
+
+   // $('a[href*=#]').bind("click", function (e) {
+     //   var anchor = $(this);
+     //   $('html, body').stop().animate({
+      //      scrollTop: $(anchor.attr('href')).offset().top
+      //  }, 1700);
+     //   e.preventDefault();
+   // });
+
+
+    $(document).ready(function () {
+        $("#top-menu").on("click", "a", function (event) {
+            //отменяем стандартную обработку нажатия по ссылке
+            event.preventDefault();
+            //забираем идентификатор бока с атрибута href
+            var id = $(this).attr('href'),
+                //узнаем высоту от начала страницы до блока на который ссылается якорь
+                top = $(id).offset().top;
+            //анимируем переход на расстояние - top за 1500 мс
+            $('body,html').animate({
+                scrollTop: top
+            }, 1000);
+        });
+    });
+
 });

@@ -537,6 +537,27 @@ img {
   max-width: 100%;
 }
 
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:active, a:focus {
+  outline: none;
+}
+
+input, textarea {
+  outline: none;
+}
+
+input:active, textarea:active {
+  outline: none;
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
 .section {
   padding: 60px;
 }
@@ -1245,6 +1266,7 @@ img {
   font-size: 1.529rem;
   letter-spacing: -1px;
   margin-top: -0.2rem;
+  color: #E3B873;
 }
 
 .footer__section-title--phone {
@@ -1416,6 +1438,7 @@ img {
 .video__play {
   position: relative;
   margin: auto;
+  cursor: pointer;
 }
 
 .our-team {
@@ -1647,6 +1670,7 @@ img {
   position: relative;
   max-width: 36.36rem;
   max-height: 36.36rem;
+  width: 506px;
   background: #131313 url("../img/bg-lines.png") no-repeat center;
   background-position-y: inherit;
   padding: 2.357rem 3.5rem 1.928rem;
@@ -1916,6 +1940,16 @@ img {
   .nav {
     display: none;
   }
+  .hero__instagram {
+    display: none;
+  }
+  .hero__scroll-down {
+    bottom: 0;
+    min-height: 5rem;
+  }
+  .hero__button {
+    width: 17rem;
+  }
   .projects .section-title__text {
     padding-right: 10px;
   }
@@ -2149,10 +2183,16 @@ img {
   .types .card__text {
     padding-top: 1.6rem;
   }
+  .control {
+    background-color: #131313;
+    padding-bottom: 0;
+    padding-top: 10px;
+    margin-bottom: 85px;
+  }
   .control .section-title__heading {
     font-size: 2.1rem;
     margin-bottom: 13px;
-    margin-top: 4.2rem;
+    margin-top: 8.3rem;
   }
   .control__video {
     min-height: 17.5rem;
@@ -2161,10 +2201,14 @@ img {
   .control__video img {
     max-width: 19%;
   }
+  .control__label {
+    color: #959595;
+  }
   .control__text {
     font-size: 1.15rem;
     line-height: 2rem;
     margin-bottom: 3.4rem;
+    color: #fff;
   }
   .control__text::before {
     margin-bottom: 1.2rem;
@@ -2177,6 +2221,7 @@ img {
   .control__input-group input {
     font-size: 1.5rem;
     margin-top: 1rem;
+    color: #fff;
   }
   .control__input-group:nth-child(1) {
     margin-top: -1.3rem;
@@ -2185,7 +2230,12 @@ img {
     margin-top: 5.1rem;
     padding: 0;
   }
+  .control__form {
+    position: relative;
+  }
   .control__button {
+    position: absolute;
+    bottom: -24px;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -2205,6 +2255,13 @@ img {
         -ms-flex-pack: left;
             justify-content: left;
     margin-left: 2.5rem;
+    color: #fff;
+    margin-bottom: 7.2rem;
+  }
+  .control__policy div.invalid {
+    left: 2.5rem;
+    bottom: 5.5rem;
+    font-size: 1.21rem;
   }
   .fantazy {
     margin-top: -11.9rem;
@@ -2293,7 +2350,6 @@ img {
     margin-bottom: 4.2rem;
   }
   .our-team .col-30 {
-    width: 100%;
     margin-bottom: 10rem;
   }
   .our-team .col-30::before {
@@ -2318,6 +2374,9 @@ img {
   .our-team__card {
     margin-left: 2.9rem;
   }
+  .our-team__card img {
+    max-width: unset;
+  }
   .footer__title {
     letter-spacing: 2px;
     margin-top: -1.8rem;
@@ -2333,6 +2392,8 @@ img {
   .footer__input-group {
     margin-left: -1rem;
     font-size: 1.21rem;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
   }
   .footer__input-group:nth-child(1) {
     -ms-flex-preferred-size: 100%;
@@ -2349,11 +2410,20 @@ img {
     margin-top: -1.6rem;
     margin-left: -3.4rem;
   }
+  .footer__policy div.invalid {
+    -webkit-transform: translateX(75%);
+            transform: translateX(75%);
+    font-size: 1.21rem;
+    bottom: -15px;
+  }
   .footer .policy__label--center {
     -webkit-box-pack: left;
         -ms-flex-pack: left;
             justify-content: left;
     margin-left: 2.5rem;
+  }
+  .footer .policy__label {
+    font-size: 1.3rem;
   }
   .footer__button {
     padding: 1.45rem;
@@ -2368,7 +2438,7 @@ img {
   .footer__map-wrap {
     margin-top: -2.3rem;
   }
-  .footer__map {
+  .footer__map > ymaps {
     max-height: 250px;
   }
   .footer__google {
@@ -2380,14 +2450,17 @@ img {
   .footer .input {
     border-bottom: solid rgba(54, 54, 54, 0.3);
   }
-  .footer .policy__label {
-    font-size: 1.3rem;
-  }
 }
 
 @media screen and (max-height: 500px) {
   .hero__scroll-down {
     display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero__button {
+    width: 100%;
   }
 }
 

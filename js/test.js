@@ -1,206 +1,335 @@
-const map = document.querySelector(".map");
-map.setAttribute("style", "display: none"), window.addEventListener("scroll", function () {
-    (window.pageYOffset || document.documentElement.scrollTop) > 3700 ? map.setAttribute("style", "display: block") : map.setAttribute("style", "display: none")
-}), [].forEach.call(document.querySelectorAll("img[data-src]"), function (e) {
-    e.setAttribute("src", e.getAttribute("data-src")), e.onload = function () {
-        e.removeAttribute("data-src")
-    }
-}), 
-
-
 $(document).ready(function () {
+    var modal = $('.modal'),
+        modalBtn = $('[data-toggle=modal]');
+        closeBtn = $('.modal__close');
 
-    var window = $(".modalka"),
-    windowBtn = $('[data-toggle="modalka"]');
-    closeWindowBtn = $(".modalka__close"),
+    modalBtn.on('click', function () {
+        modal.toggleClass('modal--visible');
+    });
+    closeBtn.on('click', function () {
+        modal.toggleClass('modal--visible');
+    });
 
-    
-    windowBtn.on("click", function () {
-            window.toggleClass("modalka--visible")
-    }), 
+    /*Закрытие по фону*/
 
-    closelkaBtn.on("click", function () {
-        window.toggleClass("modalka--visible")
+    $(document).click(function (e) {
+        if ($(e.target).is('.modal')) {
+            modal.toggleClass('modal--visible');
+        }
+    });
+
+    /*Закрытие по кнопке*/
+
+    $(document).keydown(function (e) {
+        if (e.keyCode === 27) {
+            modal.toggleClass('modal--visible');
+        }
+    });
+
+    /*Кнопка прокрутки*/
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 100) {
+            $('#scroll_top').show();
+        } else {
+            $('#scroll_top').hide();
+        }
+    });
+
+    $('#scroll_top').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 600);
+        return false;
     });
 
 
-    var o = $(".modal"),
-        l = $('[data-toggle="modal"]');
-
-
-    closeBtn = $(".modal__close"), l.on("click", function () {
-        o.toggleClass("modal--visible")
-    }), 
-    
-    
-    closeBtn.on("click", function () {
-        o.toggleClass("modal--visible")
-    });
-
-
-
-
-
-    new Swiper(".swiper-container", {
-        loop: !0,
+    var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
         pagination: {
-            el: ".swiper-pagination",
-            type: "bullets"
+            el: '.swiper-pagination',
+            type: 'bullets',
         },
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        }
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
     });
-    var a = $(".swiper-button-next"),
-        t = $(".swiper-button-prev"),
-        i = $(".swiper-pagination");
-    a.css("left", t.width() + 10 + i.width() + 10), i.css("left", t.width() + 10), $(".modal__form").validate({
-        errorElement: "em",
+
+
+    var nextBtn = $('.swiper-button-next');
+    var prevtBtn = $('.swiper-button-prev');
+    var bullets = $('.swiper-pagination');
+
+    nextBtn.css('left', prevtBtn.width() + 20 + bullets.width() + 20)
+    bullets.css('left', prevtBtn.width() + 20)
+
+    new WOW().init();
+
+
+    //*Анимация
+
+    var block_show = false;
+
+    function scrollTracking() {
+        if (block_show) {
+            return false;
+        }
+
+        var wt = $(window).scrollTop();
+        var wh = $(window).height();
+        var et = $('.move').offset().top;
+        var eh = $('.move').outerHeight();
+        var dh = $(document).height();
+
+        if (wt + wh >= et || wh + wt == dh || eh + et < wh) {
+            block_show = true;
+            // Код анимации
+            $('.move div:eq(0)').show('fast', function () {
+                $(this).next().show('fast', arguments.callee);
+            });
+        }
+    }
+
+    // Валидация формы
+
+    //Модальное окно
+    $('.modal__form').validate({
         errorClass: "invalid",
         rules: {
+            // строчное правило {required:true}
             userName: {
-                required: !0,
-                minlength: 2
+                required: true,
+                minlength: 2,
+                maxlength: 15
             },
-            userPhone: "required",
+            userPhone: {
+                required: true,
+                minlength: 8
+            },
+            // правило-объект (блок)
             userEmail: {
-                required: !0,
-                email: !0
+                required: true,
+                email: true
             },
-            modalCheckbox: "required"
-        },
+            policyCheckbox: {
+                required: true
+            },
+            userQuestion: "required"
+
+        }, // сообщения
         messages: {
             userName: {
                 required: "Имя обязательно",
-                minlength: "Имя не короче 2 букв"
+                minlength: "Врёшь, сволочь!",
+                maxlength: "Чувак, у тебя залипла клава!"
             },
-            userPhone: "Телефон обязателен",
-            modalCheckbox: "Обработка данных обязательна",
+            userPhone: {
+                required: "Тэляфон тожэ обызатэлэн!!!",
+                minlength: "Добавь циферек, жалко что ли ?"
+            },
             userEmail: {
-                required: "Обязательно укажите email",
-                email: "Введите в формате name@domain.com"
+                required: "Заполните поле",
+                email: "Введите что-то типа name@domain.ru"
+            },
+            policyCheckbox: {
+                required: "Поставь галку, редиска!"
             }
         },
-
-
-
-        submitHandler: function (r) {
+        submitHandler: function (form) {
             $.ajax({
                 type: "POST",
                 url: "send.php",
-                data: $(r).serialize(),
-                success: function (l) {
-                    return $(r)[0].reset(), 
-                    o.removeClass("modal--visible"), 
-                    e.toggleClass("modalka--visible"), 
-                    ym(61256533, "reachGoal", "form"), !0
-                },
-                error: function (e) {
-                    console.error("Ошибка запроса " + e)
+                data: $(form).serialize(),
+                success: function (response) {
+                    alert('Форма отправлена, ждите санитаров');
+                    console.log(modal);
+                    $(form)[0].reset();
+                    modal.removeClass('modal--visible');
                 }
-            })
+            });
         }
-    }),
-    
-    
-    $(".control__form").validate({
-        errorElement: "em",
+    });
+
+    //Секция "Control"
+
+    $('.control__form').validate({
         errorClass: "invalid",
         rules: {
+            // строчное правило {required:true}
             userName: {
-                required: !0,
-                minlength: 2
+                required: true,
+                minlength: 2,
+                maxlength: 15
             },
-            userPhone: "required",
-            userEmail: {
-                required: !0,
-                email: !0
+            userPhone: {
+                required: true,
+                minlength: 8
             },
-            userCheckbox: "required"
-        },
+            controlCheckbox: {
+                required: true
+            },
+        }, // сообщения
         messages: {
             userName: {
                 required: "Имя обязательно",
-                minlength: "Имя не короче 2 букв"
+                minlength: "Врёшь, сволочь!",
+                maxlength: "Чувак, у тебя залипла клава!"
             },
-            userPhone: "Телефон обязателен",
-            userEmail: {
-                required: "Обязательно укажите email",
-                email: "Введите в формате name@domain.com"
+            userPhone: {
+                required: "Телефон обязателен. Всё обязательно!",
+                minlength: "Добавь циферек, жалко что ли ?"
             },
-            userCheckbox: "Обработка обязательна"
+            controlCheckbox: {
+                required: "Ничё не забыл?"
+            }
         },
-
-        submitHandler: function (r) {
+        submitHandler: function (form) {
             $.ajax({
                 type: "POST",
                 url: "send.php",
-                data: $(r).serialize(),
-                success: function (l) {
-                    return $(r)[0].reset(),
-                     e.toggleClass("modalka--visible"),
-                      o.removeClass("modal--visible"), 
-                      ym(61256533, "reachGoal", "form"), !0
-                },
-                error: function (e) {
-                    console.error("Ошибка запроса " + e)
+                data: $(form).serialize(),
+                success: function (response) {
+                    alert('Трансляция платная! Переведите 350wmz на мой WMZ-кошелек');
+                    $(form)[0].reset();
                 }
-            })
+            });
         }
-    }), $(".footer__form").validate({
-        errorElement: "div",
+    });
+
+
+
+    //Футер
+
+    $('.footer__form').validate({
         errorClass: "invalid",
         rules: {
+            // строчное правило {required:true}
             userName: {
-                required: !0,
-                minlength: 2
+                required: true,
+                minlength: 2,
+                maxlength: 15
             },
-            userQuestion: {
-                required: !0,
-                minlength: 10
+            userPhone: {
+                required: true,
+                minlength: 7
             },
-            userPhone: "required",
-            footerCheckbox: "required"
-        },
+            // правило-объект (блок)
+            footerCheckbox: {
+                required: true
+            },
+            userQuestion: "required"
+
+        }, // сообщения
         messages: {
             userName: {
                 required: "Имя обязательно",
-                minlength: "Имя не короче 2 букв"
+                minlength: "Врёшь, сволочь!",
+                maxlength: "Чувак, у тебя залипла клава!"
             },
-            userPhone: "Телефон обязателен",
-            userEmail: {
-                required: "Обязательно укажите email",
-                email: "Введите в формате name@domain.com"
+            userPhone: {
+                required: "Телефон обязателен. Всё обязательно!",
+                minlength: "Добавь циферек, жалко что ли ?",
             },
             userQuestion: {
-                required: "Обязательно укажите вопрос",
-                minlength: "Вопрос не меньше 10 букв"
+                required: "Хотел спросить - спрашивай!"
             },
-            footerCheckbox: "Обработка обязательна"
+            footerCheckbox: {
+                required: "Не тормози! Одна галочка решит все наши будущие проблемы!)",
+            }
         },
-        submitHandler: function (r) {
+        submitHandler: function (form) {
             $.ajax({
                 type: "POST",
                 url: "send.php",
-                data: $(r).serialize(),
-                success: function (l) {
-                    return $(r)[0].reset(), e.toggleClass("modalka--visible"), o.removeClass("modal--visible"), ym(61256533, "reachGoal", "question"), !0
-                },
-                error: function (e) {
-                    console.error("Ошибка запроса " + e)
+                data: $(form).serialize(),
+                success: function (response) {
+                    alert('За спрос денег не берут! Но для тебя сделаем исключение))');
+                    $(form)[0].reset();
                 }
-            })
+            });
         }
-    }), $("[type=tel]").mask("+7(000) 000-00-00", {
-        placeholder: "+7 (___) __-__-___"
-    })
-});
-var btn = $("#button");
-$(window).scroll(function () {
-    $(window).scrollTop() > 300 ? btn.addClass("show") : btn.removeClass("show")
-}), btn.on("click", function (e) {
-    e.preventDefault(), $("html, body").animate({
-        scrollTop: 0
-    }, "300")
+    });
+
+
+    // маска для номера телефона
+    $('[type=tel]').mask('+7(000) 000-00-00', {
+        placeholder: "+7 (__) ___-__-__"
+    });
+    $('[type=tel2]').mask('+7(000) 000-00-00', {
+        placeholder: "Ваш номер телефона"
+    });
+
+    //Плеер
+    var player;
+    $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '570',
+            width: '100%',
+            videoId: 'RAgUDsgKENg',
+            events: {
+                'onReady': videoPlay
+            }
+        });
+        $('.video__play').css('max-height', '31rem');
+    });
+
+    function videoPlay(event) {
+        event.target.playVideo();
+    }
+    //Создание карты Яндекс: И НА ХРЕНА МЫ НА НЕЕ СВОЕ ВРЕМЯ ТРАТИЛИ !?????
+
+    // Функция ymaps.ready() будет вызвана, когда
+   // ymaps.ready(function () {
+       // var myMap = new ymaps.Map('map', {
+               // center: [47.222078, 39.720349],
+               // zoom: 9
+         //   }, {
+          //      searchControlProvider: 'yandex#search'
+          //  }),
+
+            // Создаём макет содержимого.
+           // MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+              //  '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+           // ),
+
+           // myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            //    hintContent: 'Наш офис',
+            //    balloonContent: 'Курительные смеси и лёгкие наркотики. Всё для Вас!'
+           // }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+            //    iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+            //    iconImageHref: 'img/marker.png',
+                // Размеры метки.
+             //   iconImageSize: [42, 60],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+              //  iconImageOffset: [-5, -38]
+           // });
+
+      //  myMap.geoObjects.add(myPlacemark);
+     //   myMap.behaviors.disable("scrollZoom");
+   // });
+
+    //Карта яндекса
+
+    var design = $('.design');
+    var designTop = design.offset().top;
+    $(window).bind('scroll', function () {
+        var windowTop = $(this).scrollTop();
+        if (windowTop > designTop) {
+            $('#map').html('<script src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac8349320c5b8696fc833ab8e2145acf66c38daf3cbcff8715af920d84c4c320c&amp;width=900&amp;height=465&amp;lang=ru_RU&amp;scroll=false"></script>')
+            $(window).unbind('scroll')
+        }
+    });
+
+    //Ленивая загрузка изображений
+
+    [].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
+        img.setAttribute('src', img.getAttribute('data-src'));
+        img.onload = function () {
+        img.removeAttribute('data-src');
+        };
+    });
 });

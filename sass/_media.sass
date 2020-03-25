@@ -68,12 +68,13 @@
     .nav
         display: none
     .hero
-       // height: 100vh
         &__instagram
             display: none
         &__scroll-down    
             bottom: 0
             min-height: 5rem
+        &__button
+            width: 17rem
     .projects
         & .section-title
             &__text
@@ -258,20 +259,27 @@
                 padding-top: 1.6rem
 
     .control 
+        background-color: $dark
+        padding-bottom: 0
+        padding-top: 10px
+        margin-bottom: 85px
         & .section-title
             &__heading 
                 font-size: 2.1rem
                 margin-bottom: 13px
-                margin-top: 4.2rem
+                margin-top: 8.3rem
         &__video
             min-height: 17.5rem
             margin-bottom: 2.1rem
             & img
                 max-width: 19%
+        &__label
+            color: $secondary
         &__text
             font-size: 1.15rem
             line-height: 2rem
             margin-bottom: 3.4rem
+            color: $light
             &::before
                 margin-bottom: 1.2rem
         &__input-group
@@ -280,16 +288,22 @@
             & input
                 font-size: 1.5rem
                 margin-top: 1rem
+                color: $light
             &:nth-child(1)
                 margin-top: -1.3rem
             &:nth-child(2)
                 margin-top: 5.1rem
                 padding: 0
+        &__form
+            position: relative
         &__button
+            position: absolute
+            bottom: -24px
             order: 2
             margin-top: 5.2rem
             width: 100%
             font-size: 1.31rem
+
         &__policy
             order: 1
             margin-top: 1rem
@@ -297,6 +311,12 @@
             &-label
                 justify-content: left
                 margin-left: 2.5rem
+                color: $light
+                margin-bottom: 7.2rem
+            & div.invalid
+                left: 2.5rem
+                bottom: 5.5rem
+                font-size: 1.21rem
     .fantazy
         margin-top: -11.9rem
         margin-bottom: -18rem
@@ -368,7 +388,6 @@
                 padding: 0
                 margin-bottom: 4.2rem
         & .col-30
-            width: 100%
             margin-bottom: 10rem
             &::before    
                 width: 9rem
@@ -388,6 +407,8 @@
                 font-size: 1.1rem
         &__card
             margin-left: 2.9rem
+            & img
+                max-width: unset
     .footer
         &__title
             letter-spacing: 2px
@@ -401,6 +422,7 @@
         &__input-group
             margin-left: -1rem
             font-size: 1.21rem
+            flex-basis: 100%
         &__input-group:nth-child(1)
             flex-basis: 100%
             margin-top: 1.5rem
@@ -411,11 +433,16 @@
         &__policy
             margin-top: -1.6rem
             margin-left: -3.4rem
+            & div.invalid
+                transform: translateX(75%)
+                font-size: 1.21rem
+                bottom: -15px
         & .policy
             &__label--center 
                 justify-content: left
                 margin-left: 2.5rem
-
+            &__label
+                font-size: 1.3rem   
         &__button
             padding: 1.45rem
             width: 100%
@@ -426,7 +453,7 @@
             height: 38px
         &__map-wrap
             margin-top: -2.3rem
-        &__map     
+        &__map > ymaps    
             max-height: 250px
         &__google
             min-height: 250px
@@ -435,15 +462,16 @@
                 font-size: unset
         & .input
             border-bottom: solid rgba(54, 54, 54, 0.3)
-        & .policy
-            &__label
-                font-size: 1.3rem       
             
 @media screen and ( max-height: 500px  )
     .hero
         &__scroll-down
             display: none
 
+@media screen and ( max-width: 400px  )
+    .hero    
+        &__button
+            width: 100%  
 @media screen and ( max-width: 375px  )
     .header
         padding: 21px 0px 22px 0px
