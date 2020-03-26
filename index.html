@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Yeseva+One&display=swap&subset=cyrillic" rel="stylesheet">
 <!--  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/animate.css">
     <link rel="stylesheet" href="./css/style.min.css">
@@ -170,26 +172,26 @@
                         <!-- Slider main container -->
                         <div class="swiper-container">
                             <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper swiper-no-swiping">
                                 <!-- Slides -->
-                                <div class="swiper-slide swiper-no-swiping show-desctop"><img
-                                        data-src="img/slider/slide1.jpg" alt="">
+                                <div class="swiper-slide ">
+                                    <img data-src="img/slider/slide1.jpg" alt="">
                                 </div>
-                                <div class="swiper-slide swiper-no-swiping show-mobile"><img
+<!--                                 <div class="swiper-slide swiper-no-swiping show-mobile"><img
                                         data-src="img/slider/slide_mob1.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide swiper-no-swiping show-desctop"><img
+                                </div> -->
+                                <div class="swiper-slide"><img
                                         data-src="img/slider/slide2.jpg" alt="">
                                 </div>
-                                <div class="swiper-slide swiper-no-swiping show-mobile"><img
+<!--                                 <div class="swiper-slide swiper-no-swiping show-mobile"><img
                                         data-src="img/slider/slide_mob2.jpg" alt="">
-                                </div>
-                                <div class="swiper-slide swiper-no-swiping show-desctop"><img
+                                </div> -->
+                                <div class="swiper-slide"><img
                                         data-src="img/slider/slide3.jpg" alt="">
                                 </div>
-                                <div class="swiper-slide swiper-no-swiping show-mobile"><img
+<!--                                 <div class="swiper-slide swiper-no-swiping show-mobile"><img
                                         data-src="img/slider/slide_mob3.jpg" alt="">
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -213,10 +215,15 @@
                     <!-- section-title__image -->
                 </div>
                 <!-- section-title -->
+
+
                 <div class="control__video video wow" id="player">
-                    <script src = "https://www.youtube.com/iframe_api"></script>
-                    <img src="img/play_btn.svg" alt="play icon" class="video__play">
+                    <a data-fancybox href="https://www.youtube.com/watch?v=DzfxtQK3Vv0" class="video__play">
+                    <img src="img/play_btn.svg" alt="play icon" ></a>
                 </div>
+
+
+
                 <!-- /.control__video video -->
                 <p class="control__text anime">
                     На каждом объекте установлена ​​камера, которая
@@ -542,7 +549,7 @@
                         </div>
                         <!-- /.section-title -->
                         <!-- Slider main container -->
-                        <div class="swiper-container">
+                        <div class="swiper-container slider-six-steps">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
@@ -644,9 +651,9 @@
                             </div>
                             <!-- /.swiper-wrapper -->
                             <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev swiper-six-steps-prev"></div>
+                            <div class="swiper-pagination swiper-six-steps-pagination"></div>
+                            <div class="swiper-button-next swiper-six-steps-next"></div>
                         </div>
                         <!-- /.swiper-container -->
                     </div>
@@ -1142,10 +1149,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/swiper.min.js"></script>
 
-
+    <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/jquery.validate.js"></script>
- <!--    <script src="js/jquery.validate.js"></script> -->
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/main.js"></script>
 </body>

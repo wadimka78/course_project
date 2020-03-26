@@ -60,7 +60,7 @@ $(document).ready(function () {
 
 
     var mySwiper = new Swiper('.swiper-container', {
-        loop: true,
+        loop: !0,
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
@@ -76,8 +76,31 @@ $(document).ready(function () {
     var prevtBtn = $('.swiper-button-prev');
     var bullets = $('.swiper-pagination');
 
-    nextBtn.css('left', prevtBtn.width() + 20 + bullets.width() + 20)
-    bullets.css('left', prevtBtn.width() + 20)
+    nextBtn.css('left', prevtBtn.width() + 10 + bullets.width() + 10)
+    bullets.css('left', prevtBtn.width() + 10)
+
+//Слайдер секции 6 шагов
+
+    var mySwiper2 = new Swiper('.slider-six-steps', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+        navigation: {
+            nextEl: '.swiper-six-steps-pagination',
+            prevEl: '.swiper-six-steps-prev',
+        },
+    });
+
+
+    var nextBtn = $('.swiper-six-steps-prev');
+    var prevtBtn = $('.swiper-six-steps-prev');
+    var bullets = $('.swiper-six-steps-pagination');
+
+    nextBtn.css('left', prevtBtn.width() + 10 + bullets.width() + 10)
+    bullets.css('left', prevtBtn.width() + 10)
+
 
     new WOW({
         mobile: false
@@ -280,22 +303,22 @@ $(document).ready(function () {
     });
 
     //Плеер
-    var player;
-    $('.video__play').on('click', function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '540',
-            width: '100%',
-            videoId: 'Yq4KA0mUnC8',
-            events: {
-                'onReady': videoPlay
-            }
-        });
+  //  var player;
+   // $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+    //    player = new YT.Player('player', {
+     //       height: '540',
+     //       width: '100%',
+         //   videoId: 'Yq4KA0mUnC8',
+       //     events: {
+        //        'onReady': videoPlay
+        //    }
+      //  });
         //   $('.video__play').css('max-height', '31rem');
-    });
+   // });
 
-    function videoPlay(event) {
-        event.target.playVideo();
-    }
+   // function videoPlay(event) {
+      //  event.target.playVideo();
+   // }
 
     //Карта яндекса
 

@@ -3,6 +3,9 @@
     .section
         & .container
             max-width: 1438px
+    .hero
+        &__content
+            margin-left: 9.9%
     .projects
         & .row
             max-width: 1236px
@@ -91,6 +94,19 @@
             padding-left: 0.5rem
             padding-right: 0.5rem
             width: 90%
+//Отрубаем ховеры
+.button
+    &:hover
+        cursor: unset
+    &--primary 
+        box-shadow: 0px 5px 15px rgba($primary, 0.2)
+.nav
+    &__item
+        &:hover
+            color: $light
+.slider-titles
+    &__block:hover
+        cursor: unset
 
 @media screen and ( max-width: 880px )
     .footer
@@ -272,7 +288,7 @@
             min-height: 17.5rem
             margin-bottom: 2.1rem
             & img
-                max-width: 19%
+                width: 64px
         &__label
             color: $secondary
         &__text
@@ -467,12 +483,19 @@
         & .input
             border-bottom: solid rgba(54, 54, 54, 0.3)
         &__menu
-            display: none           
+            display: none
+    .modal
+        max-width: 90%
+        margin: auto      
 @media screen and ( max-height: 500px  )
     .hero
         &__scroll-down
             display: none
 
+@media screen and ( max-width: 475px  )
+    .modal
+        &__title
+            padding: 0px 10px
 @media screen and ( max-width: 400px  )
     .hero    
         &__button
@@ -507,3 +530,18 @@
             letter-spacing: .11rem
     .button--outline
         letter-spacing: .075rem
+    .modal
+        &__dialog
+            padding: 2.357rem 1.5rem 1.928rem
+
+@media screen and ( max-width: 374px  )
+    .our-team
+        & img
+            max-width: 100%
+@media screen and ( max-width: 360px  )
+    .our-team .card__pricetag 
+            max-width: 171px
+
+@media screen and ( max-width: 320px  )
+    .our-team .card__pricetag 
+            max-width: 168px

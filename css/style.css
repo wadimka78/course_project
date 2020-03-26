@@ -921,7 +921,9 @@ button:active, button:focus {
   background: url("../img/arrow-next.svg") no-repeat center;
 }
 
-.swiper-container-horizontal > .swiper-pagination-bullets {
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
   width: auto;
   bottom: -2px;
 }
@@ -1697,6 +1699,7 @@ button:active, button:focus {
   margin-bottom: 2.428rem;
   padding: 0px 50px;
   line-height: 2.3rem;
+  font-weight: 100;
 }
 
 .modal__form {
@@ -1851,6 +1854,9 @@ button:active, button:focus {
   .section .container {
     max-width: 1438px;
   }
+  .hero__content {
+    margin-left: 9.9%;
+  }
   .projects .row {
     max-width: 1236px;
     margin: auto;
@@ -1965,6 +1971,23 @@ button:active, button:focus {
     padding-right: 0.5rem;
     width: 90%;
   }
+}
+
+.button:hover {
+  cursor: unset;
+}
+
+.button--primary {
+  -webkit-box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+          box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+}
+
+.nav__item:hover {
+  color: #fff;
+}
+
+.slider-titles__block:hover {
+  cursor: unset;
 }
 
 @media screen and (max-width: 880px) {
@@ -2199,7 +2222,7 @@ button:active, button:focus {
     margin-bottom: 2.1rem;
   }
   .control__video img {
-    max-width: 19%;
+    width: 64px;
   }
   .control__label {
     color: #959595;
@@ -2459,11 +2482,21 @@ button:active, button:focus {
   .footer__menu {
     display: none;
   }
+  .modal {
+    max-width: 90%;
+    margin: auto;
+  }
 }
 
 @media screen and (max-height: 500px) {
   .hero__scroll-down {
     display: none;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .modal__title {
+    padding: 0px 10px;
   }
 }
 
@@ -2512,6 +2545,27 @@ button:active, button:focus {
   }
   .button--outline {
     letter-spacing: .075rem;
+  }
+  .modal__dialog {
+    padding: 2.357rem 1.5rem 1.928rem;
+  }
+}
+
+@media screen and (max-width: 374px) {
+  .our-team img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .our-team .card__pricetag {
+    max-width: 171px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .our-team .card__pricetag {
+    max-width: 168px;
   }
 }
 /*# sourceMappingURL=style.css.map */
