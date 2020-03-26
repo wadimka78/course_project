@@ -1911,6 +1911,18 @@ button:active, button:focus {
   }
 }
 
+@media screen and (min-width: 576px) and (max-width: 1359px) {
+  .projects {
+    padding-bottom: 26.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hero__button:hover {
+    cursor: pointer;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .fantazy {
     display: none;
@@ -1928,7 +1940,7 @@ button:active, button:focus {
     font-size: 12px;
   }
   .nav {
-    margin-left: 3rem;
+    margin: auto;
   }
   .nav__item {
     margin-right: 1rem;
@@ -1939,9 +1951,18 @@ button:active, button:focus {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .projects__row .col-50:nth-child(2) .swiper-slide-active {
+    padding-top: 8rem;
+  }
+}
+
 @media screen and (max-width: 991px) {
   html {
     font-size: 12px;
+  }
+  a:hover {
+    cursor: default;
   }
   .nav {
     display: none;
@@ -1971,28 +1992,33 @@ button:active, button:focus {
     padding-right: 0.5rem;
     width: 90%;
   }
-}
-
-.button:hover {
-  cursor: unset;
-}
-
-.button--primary {
-  -webkit-box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
-          box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
-}
-
-.nav__item:hover {
-  color: #fff;
-}
-
-.slider-titles__block:hover {
-  cursor: unset;
+  .button:hover {
+    cursor: default;
+  }
+  .button--primary:hover {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .nav__item:hover {
+    color: #fff;
+  }
+  .slider-titles__block:hover {
+    cursor: default;
+  }
 }
 
 @media screen and (max-width: 880px) {
   .footer__map {
     width: 90%;
+  }
+  .clients .col-30 {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    -ms-flex-preferred-size: 35%;
+        flex-basis: 35%;
+  }
+  .tasks {
+    max-width: 100%;
   }
 }
 
@@ -2485,6 +2511,7 @@ button:active, button:focus {
   .modal {
     max-width: 90%;
     margin: auto;
+    background-color: unset;
   }
 }
 

@@ -25,7 +25,6 @@ $(document).ready(function () {
     });
 
 
-
     /*Закрытие по фону*/
 
     $(document).click(function (e) {
@@ -78,29 +77,6 @@ $(document).ready(function () {
 
     nextBtn.css('left', prevtBtn.width() + 10 + bullets.width() + 10)
     bullets.css('left', prevtBtn.width() + 10)
-
-//Слайдер секции 6 шагов
-
-    var mySwiper2 = new Swiper('.slider-six-steps', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-        },
-        navigation: {
-            nextEl: '.swiper-six-steps-pagination',
-            prevEl: '.swiper-six-steps-prev',
-        },
-    });
-
-
-    var nextBtn = $('.swiper-six-steps-prev');
-    var prevtBtn = $('.swiper-six-steps-prev');
-    var bullets = $('.swiper-six-steps-pagination');
-
-    nextBtn.css('left', prevtBtn.width() + 10 + bullets.width() + 10)
-    bullets.css('left', prevtBtn.width() + 10)
-
 
     new WOW({
         mobile: false
@@ -239,7 +215,6 @@ $(document).ready(function () {
     });
 
 
-
     //Футер
 
     $('.footer__form').validate({
@@ -302,23 +277,6 @@ $(document).ready(function () {
         placeholder: "Ваш номер телефона"
     });
 
-    //Плеер
-  //  var player;
-   // $('.video__play').on('click', function onYouTubeIframeAPIReady() {
-    //    player = new YT.Player('player', {
-     //       height: '540',
-     //       width: '100%',
-         //   videoId: 'Yq4KA0mUnC8',
-       //     events: {
-        //        'onReady': videoPlay
-        //    }
-      //  });
-        //   $('.video__play').css('max-height', '31rem');
-   // });
-
-   // function videoPlay(event) {
-      //  event.target.playVideo();
-   // }
 
     //Карта яндекса
 
@@ -334,37 +292,20 @@ $(document).ready(function () {
 
     //Ленивая загрузка изображений
 
-    [].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
-        img.setAttribute('src', img.getAttribute('data-src'));
-        img.onload = function () {
-            img.removeAttribute('data-src');
-        };
-    });
-
-    //Плавный скролинг по якорным ссылкам
-    // $(document).ready(function(){
-    //   $("#top-menu").on("click","a", function (event) {
-    //     event.preventDefault();
-    //    var id  = $(this).attr('href'),
-    //        top = $(id).offset().top;
-    //   $('body,html').animate({scrollTop: top}, 500);
-    // });
-    // });
-
-   // $('a[href*=#]').bind("click", function (e) {
-     //   var anchor = $(this);
-     //   $('html, body').stop().animate({
-      //      scrollTop: $(anchor.attr('href')).offset().top
-      //  }, 1700);
-     //   e.preventDefault();
+   // [].forEach.call(document.querySelectorAll('img[data-src]'), function (img) {
+      //  img.setAttribute('src', img.getAttribute('data-src'));
+      //  img.onload = function () {
+    //        img.removeAttribute('data-src');
+       // };
    // });
 
+    // Плавный скролинг для верхнего меню
 
     $(document).ready(function () {
         $("#top-menu").on("click", "a", function (event) {
             //отменяем стандартную обработку нажатия по ссылке
             event.preventDefault();
-            //забираем идентификатор бока с атрибута href
+            //забираем идентификатор блока с атрибута href
             var id = $(this).attr('href'),
                 //узнаем высоту от начала страницы до блока на который ссылается якорь
                 top = $(id).offset().top;
@@ -375,4 +316,58 @@ $(document).ready(function () {
         });
     });
 
+// Плавный скролинг для кнопки "Листайте вниз"
+
+    $(document).ready(function () {
+        $("#scroll-down").on("click", "a", function (event) {
+            //отменяем стандартную обработку нажатия по ссылке
+            event.preventDefault();
+            //забираем идентификатор блока с атрибута href
+            var id = $(this).attr('href'),
+                //узнаем высоту от начала страницы до блока на который ссылается якорь
+                top = $(id).offset().top;
+            //анимируем переход на расстояние - top за 800 мс
+            $('body,html').animate({
+                scrollTop: top
+            }, 800);
+        });
+    });
+
+// Плавный скролинг для нижнего меню
+
+    $(document).ready(function () {
+        $("#bottom-menu").on("click", "a", function (event) {
+            //отменяем стандартную обработку нажатия по ссылке
+            event.preventDefault();
+            //забираем идентификатор блока с атрибута href
+            var id = $(this).attr('href'),
+                //узнаем высоту от начала страницы до блока на который ссылается якорь
+                top = $(id).offset().top;
+            //анимируем переход на расстояние - top за 800 мс
+            $('body,html').animate({
+                scrollTop: top
+            }, 800);
+        });
+    });
+
 });
+
+//Ещё загрузка изображений
+
+document.addEventListener("DOMContentLoaded", function () {
+    var e, r = document.querySelectorAll("img.lazyload");
+
+    function o() {
+        e && clearTimeout(e), e = setTimeout(function () {
+            var e = window.pageYOffset;
+            r.forEach(function (r) {
+                r.offsetTop < window.innerHeight + e && (r.src = r.dataset.src, r.classList.remove("lazyload"))
+            }), 0 == r.length && (document.removeEventListener("scroll", o),
+                window.removeEventListener("resize", o),
+                window.removeEventListener("orientationChange", o))
+        }, 20)
+    }
+    document.addEventListener("scroll", o),
+        window.addEventListener("resize", o),
+        window.addEventListener("orientationChange", o)
+})

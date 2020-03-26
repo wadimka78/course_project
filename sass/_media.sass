@@ -49,6 +49,15 @@
     .nav
         &__item
             margin-right: 1.1rem
+
+@media screen and (min-width: 576px)and ( max-width: 1359px)
+    .projects
+        padding-bottom: 26.5rem
+
+@media screen and ( min-width: 992px)
+    .hero
+        &__button:hover
+            cursor: pointer
 @media screen and ( min-width: 768px)
     .fantazy
         display: none
@@ -59,15 +68,25 @@
     html
         font-size: 12px
     .nav
-        margin-left: 3rem
+        margin: auto
         &__item
             margin-right: 1rem
     .section
         padding-left: 5%
         padding-right: 5%
+
+
+@media screen and (min-width: 768px)and ( max-width: 991px)
+    .projects
+        &__row
+            & .col-50:nth-child(2)
+                .swiper-slide-active
+                    padding-top: 8rem     
 @media screen and ( max-width: 991px )
     html
         font-size: 12px
+    a:hover
+        cursor: default
     .nav
         display: none
     .hero
@@ -94,24 +113,30 @@
             padding-left: 0.5rem
             padding-right: 0.5rem
             width: 90%
-//Отрубаем ховеры
-.button
-    &:hover
-        cursor: unset
-    &--primary 
-        box-shadow: 0px 5px 15px rgba($primary, 0.2)
-.nav
-    &__item
+
+    .button
         &:hover
-            color: $light
-.slider-titles
-    &__block:hover
-        cursor: unset
+            cursor: default
+        &--primary:hover 
+            box-shadow: none
+    .nav
+        &__item
+            &:hover
+                color: $light
+    .slider-titles
+        &__block:hover
+            cursor: default
 
 @media screen and ( max-width: 880px )
     .footer
         &__map
             width: 90%
+    .clients .col-30 
+        margin-left: .5rem
+        margin-right: .5rem
+        flex-basis: 35%
+    .tasks
+        max-width: 100%
 @media screen and ( max-width: 767px )
     html
         font-size: 11px
@@ -486,7 +511,8 @@
             display: none
     .modal
         max-width: 90%
-        margin: auto      
+        margin: auto
+        background-color: unset  
 @media screen and ( max-height: 500px  )
     .hero
         &__scroll-down
